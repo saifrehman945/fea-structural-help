@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<configurations xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <palette>
+    <!-- Shown as the palette tooltip and header. May differ from the folder name. -->
+    <name>My Utilities</name>
+    <!-- 36x36 image, must exist in this palette folder's res/ directory. -->
+    <icon>myUtilities.png</icon>
+    <description>In-house modelling utilities</description>
+    <!-- Groups appear in this order. Each Name must match a group.xml <name>. -->
+    <tool_groups Version="1.0" LastUpdate="20240101">
+      <group Name="Example Group"/>
+    </tool_groups>
+  </palette>
+</configurations>

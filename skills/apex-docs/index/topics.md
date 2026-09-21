@@ -1,0 +1,596 @@
+# Topic hierarchy
+
+The documentation book tree, rebuilt from each page's parent link. Use it to find neighbouring pages once you have landed somewhere roughly right — related material is almost always a sibling.
+
+- `2379` Product Documentation
+  - `904` MSC Apex Modeler
+    - `925` Tools
+      - `905` Geometry
+        - `915` Geometry Create
+          - `906` Push/Pull
+            - `909` Face Push Pull Gestures
+            - `910` Face Push Pull Upto
+            - `916` Edge Push Pull Options
+            - `917` Face Push Pull Behaviors
+            - `918` Remove Inner Loops
+            - `919` Force Boolean Unite
+            - `1043` Push pull allowable pick choices
+          - `982` Sketching Tools
+            - `983` 2 Point Rectangle
+            - `984` 3 Point Rectangle
+            - `985` Center Circle
+            - `986` 3 Point Circle
+            - `987` Polyline
+            - `988` Spline
+            - `989` Center Arc
+            - `990` 3 Point Arc
+            - `991` Ellipse
+            - `993` Fillet
+            - `994` Chamfer
+            - `995` Point
+            - `996` Trim
+            - `997` Split
+            - `998` Project Sketch
+            - `999` Edit Sketch
+        - `923` Geometry Edit
+          - `924` Defeature
+          - `944` Vertex Edge Drag
+            - `1029` Vertex/Edge Drag Guide Lines and Snapping
+            - `1030` Vertex/Edge Drag Tool Properties
+            - `1032` Edge Drag Modes
+            - `1033` Vertex/Edge Drag Line Behavior
+          - `945` Suppress/Unsuppress
+          - `946` Stitch Geometry
+          - `947` Split Surfaces
+          - `948` Split Curves
+          - `949` Filler
+          - `950` Vertex Add/Remove
+          - `951` Curves
+          - `952` Point Create
+          - `1055` Midsurface
+            - `1056` Constant Thickness
+            - `1057` Distance Offset
+            - `1273` Incremental Midsurface
+              - `1276` Extract Face Pairs
+              - `1277` Edit Face Pairs
+              - `1278` Merge Face Pairs
+              - `1279` Define Offset Type
+              - `1280` Extract Midsurfaces
+            - `1274` Midsurfacing Tips and Tricks
+            - `1275` Taper Midsurface Creation
+            - `1494` Auto Offset
+          - `1079` Geometry Cleanup
+          - `1088` Surface Extend
+          - `1509` Boolean
+          - `1510` Split Tool
+          - `2339` Revolve/Sweep
+            - `2475` Extrude using Revolve / Sweep
+          - `2342` Geometry From Mesh
+          - `2382` Surface Loft
+          - `2585` Facet to NURBS
+          - `3018` Geometry Body Property
+          - `3023` Datum Plane
+        - `2492` Geometry Primitives
+          - `2493` Box
+          - `2507` Cylinder
+          - `2508` Sphere
+          - `2509` Ellipsoid
+      - `908` Finite Elements
+        - `954` Meshing
+          - `956` Node Create
+          - `957` Curve Meshing
+          - `958` Surface Meshing
+            - `2409` Incremental Surface Meshing
+          - `959` Solid Meshing
+          - `960` Seeding
+          - `961` Feature Mesh Setting
+          - `1268` Mesh Control
+          - `3053` Hex Meshing
+          - `3120` Shrink Wrap Mesh
+        - `955` FEM Edit
+          - `907` Node Move
+          - `962` Node Align
+          - `965` Split Element
+          - `1403` Element Orientation
+          - `2023` Node Merge
+          - `2277` Renumber Entities
+          - `2586` Element Separate
+          - `3027` Pyramid Element
+          - `3167` Tria Reduction
+      - `966` Transform
+        - `1271` Transform Point to Point
+        - `2392` Transform Align
+        - `2393` Transform Mirror
+        - `2394` Transform Manipulator: Lock/Unlock
+      - `967` Measurement
+        - `968` Distance
+        - `969` Diameter
+        - `970` Angle
+      - `1069` Panel Selector
+        - `1073` Material
+        - `1474` Beams
+          - `2286` 1D Beam Profile
+            - `2279` Annotate
+            - `2280` Save Profile
+            - `2281` Save Profile As
+            - `2282` Open Profile
+          - `2294` Create Beam Span
+        - `2053` System Damping
+        - `2774` Sheets/Stacks
+        - `2900` 2D Element Properties
+        - `2998` 3D Element Properties
+        - `3067` Parameters & System Cell
+      - `1100` Attribution
+        - `1089` Auto Thickness
+        - `1452` Point Mass
+        - `2201` Interface
+        - `2229` Panels
+        - `2455` Nonstructural Mass
+        - `3040` Material Orientation Field
+        - `3065` Thickness and Offset Field
+        - `3144` NSM Combination (NSMADD)
+      - `1105` Loads and Constraints
+        - `1453` Gravity Load
+        - `2746` Lug Load
+        - `3087` Dynamic Load
+          - `3101` Time Delay
+          - `3102` Phase Lead
+        - `3088` Temperature
+        - `3089` Beam Temperature
+        - `3093` Acceleration Load
+        - `3094` Rotational Force
+        - `3098` Initial Conditions
+          - `3070` Initial Beam Temperature
+          - `3071` Initial Strain
+          - `3072` Initial Stress
+          - `3073` Initial Displacement and Velocity
+          - `3096` Initial Temperature
+        - `3103` Constraints
+          - `3075` Constraint
+          - `3076` Support
+          - `3078` Exclude Degrees of Freedom from AUTOSPC
+          - `3095` Constraint Combination
+        - `3104` Structural Loads
+          - `3079` Force
+          - `3080` Moment
+          - `3081` Pressure
+          - `3082` Beam Distributed Load
+          - `3083` Enforced Motion
+          - `3084` 1D Axial Deformation
+          - `3085` Load Scale Factor
+          - `3086` Load Combination
+        - `3119` Field
+      - `1107` Interactions
+        - `1108` Interaction
+        - `1473` Mesh Dependent Tie
+        - `2026` Connector
+        - `2272` Discrete Tie
+        - `2340` Joints
+        - `2983` Bolt Preload
+        - `2987` 3D Bolt
+        - `3133` Average Point
+        - `3149` Contact Table (BCTABL1)
+      - `1223` Postprocessing
+        - `1224` Spectrum Controller
+          - `1281` Result Transformations
+          - `2236` Von Mises Stress Calculation
+        - `1225` Modes Navigator
+        - `1475` Vector Plot Controller
+        - `2111` Dynamic Scenario Postprocessing
+        - `2237` Composites Postprocessing
+        - `2264` Beam Postprocessing
+        - `2390` Connector Postprocessing
+        - `2513` Multiple Views and View Collections
+        - `2518` Motion Results Postprocessing
+          - `2519` Chart Editor
+        - `2744` Plot Target Tool
+        - `2949` Free Body Plot
+        - `3131` Result Quantity Filter
+        - `3160` MSC Apex Modeler Post Charting
+        - `3162` Post Processing Multiple Views for New Solutions
+        - `3168` Post Processing Response Chart from Probe Tool
+      - `1226` Analysis Interface Panel
+      - `2078` Sensors and Instrumentation
+        - `2079` Point Sensor
+        - `2169` X-Section Force Sensor
+      - `2230` Core Sample
+      - `2289` Probe
+        - `2402` Probe Result Along 1D Path
+      - `2397` Coordinate Tools
+        - `2341` Coordinate System
+        - `2730` Assign Coordinate System
+      - `2747` Group Tools
+        - `2748` Create Group
+      - `2946` Design Exploration Tools
+        - `2947` Design Variable
+    - `926` Application Overview
+      - `931` Main Window
+      - `934` Status Bar
+      - `1262` Menu Functions
+        - `933` Full Screen
+        - `1263` License Manager
+        - `1264` Progress Bars
+        - `3163` Missions
+      - `1511` Modeling Tools
+        - `1001` Accessing Tools
+        - `1002` Common Tool Patterns
+          - `1036` Tool Topologies
+          - `1037` Selection Paradigms
+          - `1038` Execution Paradigms
+      - `2384` New Features By Apex Release
+        - `2385` MSC Apex Fossa Release
+        - `2386` MSC Apex Grizzly Release
+        - `2387` MSC Apex Harris Hawk Release
+        - `2388` MSC Apex Harris Hawk SP1 Release
+        - `2404` MSC Apex Iberian Lynx Release
+        - `2449` MSC Apex Iberian Lynx Feature Pack 1 Release
+        - `2480` MSC Apex Iberian Lynx Feature Pack 2 Release
+        - `2522` MSC Apex Jaguar Release
+        - `2577` MSC Apex 2020 Release
+        - `2588` MSC Apex 2020 Feature Pack 1 Release
+        - `2641` MSC Apex 2021
+        - `2674` MSC Apex 2021.1
+        - `2765` MSC Apex 2021.2
+        - `2934` MSC Apex 2021.3
+        - `3006` MSC Apex 2021.4
+        - `3013` MSC Apex 2022.1
+        - `3019` MSC Apex 2022.2
+        - `3026` MSC Apex 2022.3
+        - `3056` MSC Apex 2022.4
+        - `3064` MSC Apex 2023.1
+        - `3112` MSC Apex 2023.2
+        - `3145` MSC Apex 2023.3
+        - `3171` MSC Apex 2024.1
+    - `927` Model Management
+      - `936` File Menu Operations
+      - `938` Model Browser
+        - `1003` Model Browser Display On/Off
+        - `1004` Tree Zoom
+        - `1005` Search
+        - `1006` Model Browser Resize
+        - `1007` Selection and Highlighting
+        - `1008` Column Management
+          - `1009` Filtering
+          - `1010` Sorting
+          - `1011` Visibility
+          - `1012` Color
+          - `1013` Render
+        - `1017` Context Menu
+          - `1018` Show
+          - `1019` Hide
+          - `1020` Show Only
+          - `1022` Show Reverse
+          - `1023` Show All
+          - `1024` Zoom To
+          - `1025` Hide All
+          - `1027` Set Current
+          - `1028` Delete
+          - `1097` Add Assembly
+          - `1098` Add Part
+        - `1233` Display Hierarchy
+        - `1476` Display Tab
+        - `2743` 0D Mesh Properties
+        - `2932` File Structure View
+        - `3129` Property View
+      - `1048` Import and Export
+        - `937` Import Geometry
+          - `1050` Import Geometry File Types
+        - `1049` Export
+          - `2180` Export For Patran
+          - `2415` Supported MSC Nastran entries for Export
+        - `1222` Import FEM
+          - `2416` Supported MSC Nastran entries for Import
+        - `2362` Attach Nastran Results
+          - `2417` Suggested Use Cases for HDF5 Attach
+          - `2418` HDF5 File Verification
+          - `2419` Example of an Unsupported Use Case
+          - `3123` Post-Processing from External HDF5 Files
+        - `3010` Import Apex Model
+      - `1261` Generative Model Behavior
+      - `2218` Database Directory Structure
+      - `2515` Part Replace
+      - `3049` Fields
+        - `3048` Material Orientation Field
+        - `3050` Auto-Thickness Field
+      - `3054` Reference System
+    - `928` View Manipulation & Selection
+      - `939` View Manipulation
+      - `940` Picking
+        - `1059` Single Picking
+        - `1060` Multiple Selection Picking
+        - `1061` Pick Filters
+        - `1062` "O" Picking
+      - `943` Interactive Triad
+      - `1463` Viewport Display Controls
+        - `941` Render Styles
+        - `942` Entity Type Displays
+        - `1064` Element Quality
+        - `1269` Geometry Visualization
+        - `1270` Show Thickness
+        - `1405` Display/Hide Element Coordinate Systems
+        - `1406` Display/Hide Shell Normals
+        - `1464` Display Using Dual Color
+        - `1465` Show Interactions
+        - `1466` Show 2D Beam Span
+        - `1467` Show 3D Beam Span
+        - `1468` Show Connections
+        - `1469` Show LBCs
+        - `1470` Grow 2D/3D Mesh
+        - `1512` Node Marker Size
+        - `1513` Mesh Cracks
+        - `1514` Mesh Topology
+        - `2164` Display Using 2.5D Color
+        - `2165` Sensor Markers
+        - `2168` Vertex Marker Size
+        - `2338` Label Visibility
+        - `2476` Nonstructural Mass
+        - `2477` Point Mass
+        - `2478` Construction Datum
+        - `2479` Interface Points
+        - `2582` Rotation Center
+        - `2638` Exploded View
+        - `2948` Cut View
+      - `1477` Entity Visibility
+      - `2075` Background Color
+      - `2505` Video and Image Capture
+        - `2506` Image Capture
+        - `2510` Movie Capture
+    - `929` Help & Search
+      - `971` Searching
+      - `972` Help UI
+      - `973` Video Player
+      - `1058` Tutorials
+      - `1099` Providing Feedback
+      - `1478` Appendix
+        - `1282` Tutorial Video Files
+          - `1283` Introduction Tutorial
+            - `1284` Video Player Startup
+            - `1285` Import Geometry
+            - `1286` Picking Filters
+            - `1287` Rotating and Zooming
+            - `1288` Interactive Triad
+            - `1289` Toolbar Pallet
+            - `1290` Meshing
+            - `1291` Viewport Display
+            - `1292` Model Browser
+            - `1293` Search Function
+            - `1294` Learning More
+          - `1296` Solid Geometry Repair Tutorial
+            - `1297` Solid Geometry Repair Introduction
+            - `1298` Defeaturing Solid Geometry
+            - `1299` Feature Identification
+            - `1300` Solid Meshing
+            - `1301` Defeature While Meshed
+            - `1302` Sketch Rectangular Feature
+            - `1303` Solid Rib Creation
+            - `1304` Hole Creation
+            - `1305` Conclusion
+          - `1368` Linear Static Analysis Tutorial
+            - `1369` Introduction to linear static analysis
+            - `1370` Import Geometry
+            - `1371` Create Solid Mesh
+            - `1372` Define Material Properties
+            - `1373` Apply Load
+            - `1374` Apply Constraint
+            - `1375` Perform Analysis
+            - `1376` View Results
+            - `1377` Create Fringe Plot
+            - `1378` Getting Additional Help
+          - `1379` Glued Assembly Analysis Tutorial
+            - `1380` Introduction
+            - `1381` Open Database
+            - `1389` Define Glue
+            - `1391` Enhance Mesh Quality
+            - `1392` Set Analysis Context
+            - `1393` Define Modal Scenario
+            - `1394` Create Simulation Scenario
+            - `1395` Add Output Request
+            - `1396` Perform Analysis
+            - `1397` View Static Results
+            - `1398` Add Model Representation
+            - `1399` Select Model Representation
+            - `1400` Select Constraints
+            - `1401` Run Modal Analysis
+            - `1402` View Modal Results
+          - `1407` Model Structure Tutorial
+            - `1408` Sketch Geometry
+            - `1409` Use Push/Pull Tool to Create Solid
+            - `1410` Add Hole
+            - `1411` Add New Part
+            - `1412` Push/Pull with Upto Option
+            - `1413` Split Surface
+            - `1414` Add an Assembly
+            - `1415` Add Third Part
+            - `1416` Create and Assign Materials
+            - `1417` Transform Orientation
+            - `1418` Mesh Solids
+            - `1419` Edit Meshed Geometry
+          - `1420` Performing a Modal Analysis Tutorial
+            - `1421` Introduction
+            - `1422` Open Database
+            - `1423` Set Analysis Context
+            - `1424` Correct the Material Properties
+            - `1426` Perform Modal Analysis
+            - `1427` Repair Disconnected Surface
+            - `1428` View Updated Modal Results
+          - `1429` Incremental Midsurfacing Process Tutorial
+            - `1430` Incremental Midsurfacing: Import Geometry
+            - `1431` Incremental Midsurfacing: Extract Face Pairs
+            - `1432` Incremental Midsurfacing: Edit Face Pairs
+            - `1433` Incremental Midsurfacing: Merge Face Pairs
+            - `1434` Incremental Midsurfacing: Remove Faces From Pairs
+            - `1435` Incremental Midsurfacing: Define Offset Type
+            - `1436` Incremental Midsurfacing: Extend Surfaces
+            - `1437` Incremental Midsurfacing: Split Surface
+            - `1438` Incremental Midsurfacing: Mesh Surfaces
+            - `1439` Incremental Midsurfacing: Define Thickness and Offset Attributes
+            - `1440` Incremental Midsurfacing: Learning More
+          - `1442` Midsurface Geometry Repair Tutorial
+            - `1443` Introduction
+            - `1444` Import Geometry
+            - `1445` Create Auto Offset Midsurface
+            - `1446` Edit Surface with Vertex/Edge Drag
+            - `1447` Extend Surfaces
+            - `1448` Split Surfaces
+            - `1449` Mesh Surface Geometry
+            - `1450` Use Autothickness Tool
+            - `1451` Export .BDF File
+          - `1454` FEM Import / Export Tutorial
+            - `1455` Introduction
+            - `1456` Import FEM
+            - `1457` Place Assembly in Analysis Scene
+            - `1458` Create Material and Section Properties
+            - `1459` Improve Element Quality
+            - `1460` Create Glue
+            - `1462` Export .BDF File
+            - `3108` Create 2D Element Properties
+          - `2133` Frequency Response Analysis
+            - `2134` Import FEM
+            - `2135` Create Displacement Constraints
+            - `2136` Define Dynamic Load
+            - `2137` Define System Damping
+            - `2138` Create Point Sensors
+            - `2139` Perform Frequency Response Analysis
+            - `2140` Postprocess Frequency Response
+            - `2141` Create Results Exploration Trial
+            - `2142` Add Additional Constraint
+            - `2143` Re-run Simulation
+            - `2144` View Results for Second Sensor
+          - `2250` Composite Panel Analysis
+            - `2251` Import Geometry
+            - `2252` Define Material Properties
+            - `2253` Define Composite Panel
+            - `2254` Create Mesh
+            - `2255` Define Beam Properties
+            - `2256` Define Loads and Constraints
+            - `2257` Perform Analysis and View Results
+          - `3174` Structure Introduction (SOL101) Tutorial
+          - `3175` Nonlinear Analysis (SOL400)
+            - `3176` Model Setup
+            - `3177` Scenario Setup
+            - `3178` Post Processing
+          - `3179` Normal Modes Analysis (SOL103)
+          - `3180` Modal Frequency Response (SOL111)
+            - `3186` Model Setup (SOL111)
+            - `3187` Post Processing (SOL111)
+          - `3183` Modal Transient Response (SOL112)
+            - `3188` Model Setup (SOL112)
+            - `3189` Post Processing (SOL112)
+    - `930` Application Settings
+      - `974` General
+      - `977` Units & Parameters
+      - `978` Tool Navigation
+      - `979` Geometry
+      - `980` Meshing
+      - `1063` Tolerances
+      - `1229` Colors
+      - `1230` Import/Export
+      - `1231` Attributes
+      - `2077` Topology Display
+      - `2265` Scripting and Customization
+      - `2266` Loads & BCs
+      - `2297` Probe Labels
+      - `2589` Interface
+      - `2646` Custom Tools
+      - `3007` Nastran Compute Environment
+      - `3008` Nastran Solver Settings
+      - `3009` Post
+      - `3012` Interactions
+      - `3157` Scenarios and Studies
+    - `1026` Glossary
+    - `1193` Certified Hardware
+    - `2153` Copyright Statement
+    - `2447` Keyboard Shortcuts
+  - `1047` MSC Apex Getting Started
+  - `1104` MSC Apex Structures
+    - `1114` Analysis Management
+      - `1232` Simulation Settings
+      - `1260` Apex Integrated Solver
+        - `2099` Dynamic (Frequency Response) Analysis
+        - `2170` Linear Buckling Analysis
+      - `2400` Analysis Scenario Status
+    - `1227` Analysis Readiness
+    - `2209` Analysis Scenarios
+      - `2210` Static Scenario
+      - `2211` Normal Modes Scenario
+      - `2212` Dynamic Scenario
+      - `2213` Buckling Scenario
+      - `2953` Nonlinear Scenario
+        - `3020` Interaction Condition
+      - `3105` Output Requests
+        - `3106` Grid Point Stress or Strain Related Output Request
+        - `3107` Non-Grid Point Stress or Strain Related Output Requests
+      - `3137` Solution Sequence
+        - `3138` Parameters and System Cell
+        - `3140` Output Requests for Solution Sequence
+        - `3141` Loads, Constraints and Initial Conditions
+        - `3142` Study View and Tree Entities
+        - `3143` BDF Import/Export for Solutions
+        - `3150` Model Configuration
+        - `3151` Simulation Settings for Solution Sequence
+        - `3152` Contact and Glue
+        - `3153` Advanced
+          - `3154` Matrices
+          - `3155` Superelement
+        - `3156` Load Cases
+        - `3159` Output Control
+  - `3028` MSC Apex Modules
+    - `3029` Pre-Processing for Modules
+      - `3034` Importing the Primary Module and Secondary Module
+      - `3035` Creating and Editing of MDRJNT & MDFAST in Module Mission
+      - `3037` Module display in the 3D Viewport
+      - `3066` Creating the Primary Module and Secondary Module
+      - `3099` Creating and Editing of MDBCNCT & MDBCTB1 in Module Mission
+      - `3100` Module Boundary Point Connections (MDCONCT)
+      - `3116` BDF Export of Modules
+    - `3030` Post-Processing for Modules
+      - `3038` Reading hdf5 results into Apex
+      - `3039` Module results plot in the 3D Viewport
+    - `3031` Application Overview
+      - `3032` Main Window
+      - `3033` Modeling Tools
+- `2380` Scripting, Macros and Custom Tools
+  - `2156` Macro Record / Play
+  - `2178` Scripting API
+    - `2259` API Reference
+      - `2403` GUI Python SDK Reference Manual
+    - `2260` Scripting Overview and Principles
+    - `2261` Object Model Diagrams
+    - `2262` Using third party Python packages with Apex
+    - `2422` Apex remote control
+    - `2433` Python Version Information
+  - `2401` Python GUI SDK
+    - `2423` Custom Tools
+      - `2424` Hello World Example
+      - `2425` Empty Tool Example
+      - `2426` Simple Layout Example
+      - `2427` Pick Filter Example
+      - `2428` Mesh All Bodies Example
+      - `2429` Mesh Selected Bodies Example
+      - `2430` File Dialog Example
+      - `2431` Display Node and Element Counts
+      - `2439` Assembly Part Tree View Example
+      - `2440` CheckBox Example
+      - `2441` RadioButton Example
+      - `2442` RadioButton Icon Example
+      - `2443` Parts DataGrid
+  - `2952` Authoring Custom Tools
+
+## Not reachable from a root
+
+- `903` MSC Apex
+- `1044` Documentation
+- `1074` (untitled)
+- `1216` (untitled)
+- `1267` (untitled)
+- `1272` (untitled)
+- `2202` Documentation
+- `2203` Documentation
+- `2204` Documentation
+- `2383` Diagnose Meshability
+- `2601` (untitled)
+- `2603` Documentation
+- `2634` (untitled)
+- `2657` Required Hardware and Software Configurations
+- `2658` Installing MSC Apex
+- `2729` (untitled)

@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<configurations xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <tool_group>
+    <!-- Must match the Name used for this group in palette.xml. -->
+    <name>Example Group</name>
+    <description>Example tools</description>
+    <!-- Tools appear in this order. Each Name must match a tool.xml <name>. -->
+    <tools>
+      <tool Name="Example Tool"/>
+    </tools>
+    <Version>1.0</Version>
+  </tool_group>
+</configurations>

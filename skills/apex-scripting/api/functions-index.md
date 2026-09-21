@@ -1,0 +1,994 @@
+# Function lookup index
+
+Flat, greppable list of every module-level function. Grep this file for a
+verb or noun, then open `api/modules/<module>.md` for the full signature.
+
+- `apex.geometry.addVertex` — DEPRECATED: In releases of Apex prior to Iberian Lynx this argument was of type apex.construct.Point3D. In the Iberian Lynx release the argument type has been changed to apex.ILocation. For the Iberian Lynx release, users may continue to pass Point3D objects however this capability may be deprecated in a future release therefore users are advised to transition their code to use apex.ILocation as quickly as possible to avoid future problems. add vertex on edge at selected location.
+- `apex.mesh.alignElementEdgeToGeometryEdge` — Aligns the "1-2" edge of 2D elements with geometry Edges and returns a dictionary containing two ElementCollections - successfully modified and unmodified elements.
+- `apex.mesh.alignElementEdgeToVector` — Aligns the "1-2" edge of 2D elements with 3D vector and returns a dictionary containing two ElementCollections - successfully modified and unmodified elements.
+- `apex.mesh.alignNodeAlongCurve` — Distributes nodes evenly along a single edge using the order they are in the input collection.
+- `apex.mesh.alignNodeAlongPath` — DEPRECATED: In releases of Apex prior to Iberian Lynx this argument was of type List Of apex.construct.Point3D. In the Iberian Lynx release the argument type has been changed to apex.ILocationCollection. For the Iberian Lynx release, users may continue to pass List Of Point3D objects however this capability may be deprecated in a future release therefore users are advised to transition their code to use apex.ILocationCollection as quickly as possible to avoid future problems. Distributes nodes evenly along a path using the order they are in the input collection.
+- `apex.assemblyCollection` — This function has been deprecated and we intend to remove it in the next Apex release. Instead use the standard constuctor apex.AssemblyCollection().
+- `apex.attribute.assignAnalysisSystem` — Assign a coordinate system as analysis coordinate system to the target entities.
+- `apex.attribute.assignBeamSpan` — Assign a new BeamSpan to a set of edges.
+- `apex.geometry.assignConstantThicknessMidSurface` — creates mid-surface body for each constant thickness solid in the target list. Can also auto-assign a constant thickness if toggle is on
+- `apex.attribute.assignMaterial` — This Function is no longer supported in Apex Nastran mission. Refer to PropertiesElement2D and PropertiesElement3D to determine how this capability is now supported.
+- `apex.attribute.assignMaterialAlignCoordinate` — This Function is no longer supported in Apex. Refer to apex.attribute.createFieldMaterialOrientationFromCoordinate to determine how this capability is now supported.
+- `apex.attribute.assignMaterialAlignCurve` — This Function is no longer supported in Apex. Refer to apex.attribute.createFieldMaterialOrientationAlignCurve to determine how this capability is now supported.
+- `apex.attribute.assignMaterialAlignEulerAngles` — This Function is no longer supported in Apex. Refer to apex.attribute.createFieldMaterialOrientationFromCoordinate to determine how this capability is now supported.
+- `apex.attribute.assignPropertiesElement3D` — Assigns a PropertiesElement3D to Apex entities.
+- `apex.attribute.assignProperty2D` — Assign a new 2D Property to a set of targets.
+- `apex.attribute.assignProperty2DAlignCoordinateAxis` — DEPRECATED: THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE.PLEASE USE apex.attribute.createFieldMaterialOrientationFromCoordinate. Assigns an 2D element property to a region of the model, aligns the 2d property axis using the X axis of a Coordinates system and returns a MaterialCoverageRegion.
+- `apex.attribute.assignProperty2DAlignCurve` — DEPRECATED: THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE.PLEASE USE apex.attribute.createFieldMaterialOrientationAlignCurve. Assigns an 2d element property (include orthtropic or 2D anisotropic material ) to a region of the model and aligns the direction axis using a director Curve or Edge and returns a Property2DCoverageRegion.
+- `apex.attribute.assignShellBehavior` — This Function is no longer supported in Apex. Refer to apex.attribute.assignProperty2D to determine how this capability is now supported.
+- `apex.attribute.assignShellSection` — This Function is no longer supported in Apex. Refer to apex.attribute.createFieldThicknessOffsetConstant to determine how this capability is now supported.
+- `apex.geometry.autoOffsetAlignMidSurface` — this offsets all bodies associated with the faces selected up to the input uptoEntity. This is a rigid transformation based on closest approach projection to the body.
+- `apex.geometry.autoOffsetMidSurface` — create mid surface. User inputs one or more solid faces. for each connected set of manifolded solid faces, one surface body is created. The offset found is based on the auto-offset algorithm. This is noromally the 1/2 way to smallest opposite distance found.
+- `apex.geometry.autoOffsetUpdateMidSurface` — create midsurface
+- `apex.beginUndoIndent` — Begin indenting commands. Commands indented at the same level will undo/redo together.
+- `apex.expression.bind` — Binds the value of an object property to an expression. Apex enables object properties to be defined directly, using value types or instances of objects or indirectly using expressions. An Apex expression is defined using a string that represents any valid single line Python statement. The expression string must start wit the "=" character. For example, expression = '=15.0*(23.6/120.0)' The expression must return a type that matches the object property type that the expression is bound to. Expressions may include references to Apex objects or object properties. To reference an Apex object within an expression the object must be identified using it's minimally unique path and Name. For example, to identify the location of a geometry solid name "Con rod", the following expression could be defined expression = '=@("Con rod").location' although this expression would ONLY be valid if there was a single named entity within the active Apex session that used the name "Con rod". To ensure unique identification of an object the full pathName of the object can be used. For example, expression = '=@("MyModel/MyAssembly/MyPart/Con rod").location' The method will raise an exception if the expression cannot be successfully evaluated.
+- `apex.expression.bulkbind` — Binds the values of the object properties to the expressions, the object properties and the expressions are stroed in a map . Apex enables object properties to be defined directly, using value types or instances of objects or indirectly using expressions. An Apex expression is defined using a string that represents any valid single line Python statement. The expression string must start wit the "=" character. For example, expression = '=15.0*(23.6/120.0)' The expression must return a type that matches the object property type that the expression is bound to. Expressions may include references to Apex objects or object properties. To reference an Apex object within an expression the object must be identified using it's minimally unique path and Name. For example, to identify the location of a geometry solid name "Con rod", the following expression could be defined expression = '=@("Con rod").location' although this expression would ONLY be valid if there was a single named entity within the active Apex session that used the name "Con rod". To ensure unique identification of an object the full pathName of the object can be used. For example, expression = '=@("MyModel/MyAssembly/MyPart/Con rod").location' The method will raise an exception if the expression cannot be successfully evaluated.
+- `apex.display.cancelRecord` — cancel Record the current movie
+- `apex.display.captureImage` — Captures an image of a region of the Apex application (either the current Viewport or the current ViewCollection) and saves it to disk in one of the supported image file formats, The method returns the fully path qualified name of the saved image file.
+- `apex.display.captureMovie` — Captures a movie of a region of the Apex application (either the current Viewport or the current ViewCollection) and saves it to disk in one of the supported movie file formats.
+- `apex.license.checkinFeature` — Checkin a Custom License Feature.
+- `apex.license.checkoutFeature` — Checkout a Custom License Feature.
+- `apex.display.clearAllGraphicsText` — Clears all graphics text that is currently displayed on the graphics view.
+- `apex.display.clearExternalVTKElements` — clearup exernal vtk elements.
+- `apex.session.clearHighlights` — Clears the highlight color on all Entities.
+- `apex.display.clearText` — Clears the supplied graphics text from the graphics view.
+- `apex.clone` — Clone the target object and return a new object with the same type. The new object will have the same attributes with the input target except the unique attributes such as the name and id.
+- `apex.gendes.createAccessRegionExtrudeCrossSection` — Create solids of access region by extruding a cross section profile extracted on a plane.
+- `apex.gendes.createAccessRegionFollowNormal` — Create solid of access region by extruding the surfaces/faces following a normal direction by default.
+- `apex.createAssembly` — Create a new Assembly in a Model.
+- `apex.attribute.createBeamShapeC` — Create a new C BeamShape.
+- `apex.attribute.createBeamShapeCAlternate` — Create a new C Alternate BeamShape.
+- `apex.attribute.createBeamShapeCruciform` — Create a new Cruciform BeamShape.
+- `apex.attribute.createBeamShapeH` — Create a new H BeamShape.
+- `apex.attribute.createBeamShapeHat` — Create a new Hat BeamShape.
+- `apex.attribute.createBeamShapeHatClosed` — Create a new Hat Closed BeamShape.
+- `apex.attribute.createBeamShapeHollowDoubleRectangular` — Create a new Hollow Double Rectangular BeamShape.
+- `apex.attribute.createBeamShapeHollowRectangularAsymmetric` — Create a new Hollow Rectangular Asymmetric BeamShape.
+- `apex.attribute.createBeamShapeHollowRectangularSymmetric` — Create a new Shape Hollow Rectangular Symmetric BeamShape.
+- `apex.attribute.createBeamShapeHollowRound` — Create a new Hollow Round BeamShape.
+- `apex.attribute.createBeamShapeHollowRoundByThickness` — Create a new Hollow Round By Thickness BeamShape.
+- `apex.attribute.createBeamShapeIAsymmetric` — Create a new I asymmetric BeamShape.
+- `apex.attribute.createBeamShapeISymmetric` — Create a new I Symmetric BeamShape.
+- `apex.attribute.createBeamShapeL` — Create a new L BeamShape.
+- `apex.attribute.createBeamShapeNumericBar` — Creates a BeamShape with "Bar" type, by directly specifying the beam section properties. Numeric BeamShapes support "Beam", "Bar" and "Rod" sub-types and this method creates a "Bar" sub-type that will ultimately cause the creation of Nastran CBAR/PBAR type entities. To create "Beam" (CBEAM/PBEAM) or "Rod" (CROD/PROD) types, use the createBeamShapeNumericBeam() or createBeamShapeNumericRod() methods instead.
+- `apex.attribute.createBeamShapeNumericBeam` — Create a new numeric BeamShape of Beam type, by directly specifying the beam section properties. Numeric BeamShapes support "Beam", "Bar" and "Rod" sub-types and this method creates a "Beam" sub-type that will ultimately cause the creation of Nastran CBEAM/PBEAM type entries. To create "Bar" (CBAR/PBAR) or "Rod" (CROD/PROD) types, use the createBeamShapeNumericBar() or createBeamShapeNumericRod() methods instead.
+- `apex.attribute.createBeamShapeNumericRod` — Create Creates a BeamShape with "Rod" type, by directly specifying the beam section properties. Numeric BeamShapes support "Beam", "Bar" and "Rod" sub-types and this method creates a "Rod" sub-type that will ultimately cause the creation of Nastran CROD/PROD type entities. To create "Beam" (CBEAM/PBEAM) or "Bar" (CBAR/PBAR) types, use the createBeamShapeNumericBeam() or createBeamShapeNumericBar() methods instead.
+- `apex.attribute.createBeamShapeProfile1D` — Creates a BeamShape1DProfile and adds it to the catalog.
+- `apex.attribute.createBeamShapeSolidHexagon` — Create a new Solid Hexagon BeamShape.
+- `apex.attribute.createBeamShapeSolidRectangle` — Create a new Shape Solid Rectangle BeamShape.
+- `apex.attribute.createBeamShapeSolidRound` — Create a new Solid Round BeamShape.
+- `apex.attribute.createBeamShapeT` — Create a new T BeamShape.
+- `apex.attribute.createBeamShapeTInverted` — Create a new T Inverted BeamShape.
+- `apex.attribute.createBeamShapeTSideways` — Create a new T Sideways BeamShape.
+- `apex.attribute.createBeamShapeU` — Create a new U BeamShape.
+- `apex.attribute.createBeamShapeZ` — Create a new Z BeamShape.
+- `apex.attribute.createBeamSpanFree` — Creates one or more free standing BeamSpans using geometry support Edges, BeamShapes, offset and orientation data and retunrs the spans in a BeamSpanCollection. The orientation and offset of a free standing span are defined independently of any other object. This method defines the orientation of the BeamShape by defining an orientation angle about the BeamSpan axis. To define the orientation of the BeamShape using vectors use the alternative "createBeamSpanFreeByVector()" method For stiffener spans, the orientation and offset of the span is determined automatically using the BeamShapes, and a reference plate. To create a stiffener type span use the createBeamSpanStiffener() method.
+- `apex.attribute.createBeamSpanFreeByVector` — Creates one or more free standing BeamSpans using geometry support Edges, BeamShapes, offset and orientation data. The orientation and offset of a free standing span are defined independently of any other object. This method uses vectors to define the orientation of the BeamShape axes. use the alternative "createBeamSpanFree_ByVector()" method to define the BeamShape using Orientations relative to the support edge axes. For stiffener spans, the orientation and offset of the span is determined automatically using the BeamShapes, and a reference plate. To create a stiffener type span use the createBeamSpanStiffener() method.
+- `apex.attribute.createBeamSpanStiffener` — Creates one or more Stiffener BeamSpans using geometry support Edges, plate orientation Faces and one or two BeamShapes. The orientation and offset of the stiffener span is determined automatically using the reference Face whereas the orientation and offset of a free standing span are defined independently of any other object and must be supplied by the user. To create a free standing type span use the createBeamSpanFree() method.
+- `apex.attribute.createBolt3DByCrossSectionAutomatic` — Create 3D bolt with the cross section method = automatic.
+- `apex.attribute.createBolt3DByCrossSectionManual` — Create 3D bolt with the cross section method = Manual.
+- `apex.attribute.createBolts3DByCrossSectionAutomatic` — Create multiple 3D bolts with the cross section method = automatic by input multiple bodies.
+- `apex.geometry.createBoxByLocationOrientation` — Creates and returns a parametric geometry Box using an input origin, orientation, length width and height.
+- `apex.attribute.createBushingRepProperties` — Creates BushingRepProperties.
+- `apex.chart.createChartPlotXY` — Creates and returns an empty ChartPlotXY object. The returned ChartPlotXY is empty on creation and must be populated with DataSeries before it can display anything useful.
+- `apex.gendes.createClearanceRegion` — this function used to create a clearance region object.
+- `apex.instrument.createClearanceSensors` — create clearance sensor objects between the selected parts.
+- `apex.post.createColorMap` — Creates a color map.
+- `apex.gendes.createCompoundInterface` — Create one or several compoundInterfaces by defining the interface thickness, machining allowance and offset distance. This method returns an CompoundInterfaceCollection, the number of compound interfaces is dependent on the target. System will smartly create the correct number of compound interfaces by judging the faces connectivity and considering the associated loads and boundary conditions. In general, all connected faces will be created with one compound interface, and if the connected faces are associated with several loads and boundary conditions, then system groups the connected faces by each load and boundary condition: each interface is created to cover the application region of each load and boundary condition. For example:
+- `apex.gendes.createCompoundInterfacesByLoadsConstraints` — Create compound interfaces on the faces applied with loads and constraints in the design target. This method returns a CompoundInterfaceCollection, the number of compound interfaces is dependent on the target. System will smartly create the correct number of interfaces by judging the faces connectivity and considering the associated loads and constraints. If target is omitted, system will automatically create compound interfaces on the all faces applied with loads and constraints in the design target so that each compound interface covers the application region of one load or constraint. Each group of connected faces applied with one load or constraint will be created with one compound interface. For example, if one force is applied with two disconnected faces, then two compound interfaces are created on the two faces. But if one force is applied on two connected faces, then only one compound interface is created on the two faces.
+- `apex.attribute.createConnector` — Create a new Connector. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Instead use createConnectorDiscrete()
+- `apex.attribute.createConnectorDiscrete` — Creates a new connector.
+- `apex.attribute.createConnectorProperties` — Create a new ConnectorProperty THIS METHOD IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Instead use createBushingRepProperties(),createDamper1DRepProperties(),createFlexibleLinkRepProperties(),createGapRepProperties(),createRigidLinkRepProperties(),createSpring1DRepProperties(),createSpringDamper1DRepProperties().
+- `apex.environment.createConstraintCombination` — Create ConstraintCombination in this environment.
+- `apex.environment.createConstraintDisplacement` — Create ConstraintDisplacement in this environment.
+- `apex.environment.createConstraintDisplacementVariable` — Create ConstraintDisplacementVariable in this environment.
+- `apex.environment.createConstraintExcludeAuto` — Create ConstraintExcludeAuto in this environment. The degrees of freedom will be excluded from AUTOSPC.
+- `apex.environment.createConstraintExcludeAuto1` — Create ConstraintExcludeAuto1 in this environment. The degrees of freedom will be excluded from AUTOSPC.
+- `apex.environment.createConstraintExcludeAuto1Variable` — Create ExcludeDof1Variable in this environment. The degrees of freedom will be excluded from AUTOSPC.
+- `apex.environment.createConstraintExcludeAutoVariable` — Create ConstraintExcludeAutoVariable in this environment. The degrees of freedom will be excluded from AUTOSPC.
+- `apex.environment.createConstraintSinglePoint` — Create ConstraintSinglePoint in this environment.
+- `apex.environment.createConstraintSinglePointVariable` — Create ConstraintSinglePointVariable in this environment.
+- `apex.attribute.createContactBody` — Creates and returns an contact body.
+- `apex.attribute.createContactBodyProperty` — Creates and returns an contact body properties.
+- `apex.attribute.createContactTable` — Creates and returns a contact table.
+- `apex.construct.createCoordinateSystemByEulerMethod` — create a coordinate system of either Rectangular, Cylindrical or Spherical type by using Euler angle method
+- `apex.construct.createCoordinateSystemByLocationOrientation` — create a coordinate system of either Rectangular, Cylindrical or Spherical type using a location and orientation
+- `apex.geometry.createCurve` — DEPRECATED: In releases of Apex prior to Iberian Lynx this argument was of type List Of apex.construct.Point3D. In the Iberian Lynx release the argument type has been changed to apex.ILocationCollection. For the Iberian Lynx release, users may continue to pass List Of Point3D objects however this capability may be deprecated in a future release therefore users are advised to transition their code to use apex.ILocationCollection as quickly as possible to avoid future problems. create curves.
+- `apex.geometry.createCurve3DNurb` — DEPRECATED: In releases of Apex prior to Iberian Lynx this argument was of type List Of apex.construct.Point3D. In the Iberian Lynx release the argument type has been changed to apex.ILocationCollection. For the Iberian Lynx release, users may continue to pass List Of Point3D objects however this capability may be deprecated in a future release therefore users are advised to transition their code to use apex.ILocationCollection as quickly as possible to avoid future problems. Creates a Curve in the current Part based on NURB mathematics.
+- `apex.geometry.createCurve3Pnt` — Creates an arc with three points.
+- `apex.geometry.createCurveIntersect` — Create one or more Curves from the intersection of two or more faces or planes. One curve is created from each contiguously connected set of intersections from the same pair of bodies.
+- `apex.mesh.createCurveMesh` — create curve mesh.
+- `apex.geometry.createCurveProject` — Creates a set collection of Curves or Points from the projection of Edges onto Faces. One Curve or Point created for each set of contiguous edges. when the curve orthogonal to a surface, creates a point.
+- `apex.geometry.createCurvesFromEdges` — Create and returns Curves from input Edges. One discrete Curve will be created for each set of contiguous edges. These can be manifolded and non-manifolded curves.
+- `apex.createCustomUnitSystem` — create custom unit system.
+- `apex.display.createCutView` — causes the cut view created in the specific 3D view.
+- `apex.geometry.createCylinderByLocationOrientation` — Creates and returns a parametric geometry Cylinder (or partial Cylinder) using an input origin, orientation, length, radius and sweepangle.
+- `apex.attribute.createDAMPING` — create DAMPING object
+- `apex.environment.createDFEMFieldAccelerationNodal` — Create DFEMFieldAccelerationNodal in this environment.
+- `apex.environment.createDFEMFieldAccelerationNodalByFileImport` — Create DFEMFieldAccelerationNodal by import file.
+- `apex.environment.createDFEMFieldConstraintDisplacement` — Create DFEMFieldConstraintDisplacement in this environment.
+- `apex.environment.createDFEMFieldConstraintDisplacementByFileImport`
+- `apex.environment.createDFEMFieldConstraintExcludeAuto` — Create DFEMFieldConstraintExcludeAuto in this environment.
+- `apex.environment.createDFEMFieldConstraintExcludeAutoByFileImport` — Create DFEMFieldConstraintExcludeAuto by import file.
+- `apex.environment.createDFEMFieldConstraintSinglePoint` — Create DFEMFieldConstraintSinglePoint in this environment.
+- `apex.environment.createDFEMFieldConstraintSinglePointByFileImport`
+- `apex.environment.createDFEMFieldDeformationAxial` — Create DFEMFieldDeformationAxial in this environment.
+- `apex.environment.createDFEMFieldDeformationAxialByFileImport` — Create DFEMFieldDeformationAxial by import file.
+- `apex.environment.createDFEMFieldEnforcedMotion` — Create DFEMFieldEnforcedMotion in this environment. It can be used for both EnforcedMotionTotalVariable and EnforcedMotionRelativeVariable.
+- `apex.environment.createDFEMFieldEnforcedMotionByFileImport` — Create DFEMFieldEnforcedMotion by import file.
+- `apex.environment.createDFEMFieldForceComponent` — Create DFEMFieldForceComponent in this environment.
+- `apex.environment.createDFEMFieldForceComponentByFileImport` — Create DFEMFieldForceComponent by import file.
+- `apex.environment.createDFEMFieldForceFollowerNormal` — Create DFEMFieldForceFollowerNormal in this environment.
+- `apex.environment.createDFEMFieldForceFollowerNormalByFileImport` — Create DFEMFieldForceFollowerNormal by import file.
+- `apex.environment.createDFEMFieldForceFollowerVector` — Create DFEMFieldForceFollowerVector in this environment.
+- `apex.environment.createDFEMFieldForceFollowerVectorByFileImport` — Create DFEMFieldForceFollowerVector by import file.
+- `apex.environment.createDFEMFieldInitialDisplacementVelocity` — Create DFEMFieldInitialDisplacementVelocity in this environment.
+- `apex.environment.createDFEMFieldInitialDisplacementVelocityByFileImport` — Create DFEMFieldInitialDisplacementVelocity by import file.
+- `apex.environment.createDFEMFieldInitialStrain` — Create DFEMFieldInitialStrain in this environment.
+- `apex.environment.createDFEMFieldInitialStrainByFileImport` — Create DFEMFieldInitialStrain by import file.
+- `apex.environment.createDFEMFieldInitialStress` — Create DFEMFieldInitialStress in this environment.
+- `apex.environment.createDFEMFieldInitialStressByFileImport` — Create DFEMFieldInitialStress by import file.
+- `apex.environment.createDFEMFieldLoadAreaFactor` — Create DFEMFieldLoadAreaFactor in this environment.
+- `apex.environment.createDFEMFieldLoadAreaFactorByFileImport` — Create DFEMFieldLoadAreaFactor by import file.
+- `apex.environment.createDFEMFieldLoadDistributed` — Create DFEMFieldLoadDistributed in this environment.
+- `apex.environment.createDFEMFieldLoadDistributedBeam2` — Create DFEMFieldLoadDistributedBeam2 in this environment.
+- `apex.environment.createDFEMFieldLoadDistributedBeam2ByFileImport` — Create DFEMFieldLoadDistributedBeam2 by import file.
+- `apex.environment.createDFEMFieldLoadDistributedBeam3` — Create DFEMFieldLoadDistributedBeam3 in this environment.
+- `apex.environment.createDFEMFieldLoadDistributedBeam3ByFileImport` — Create DFEMFieldLoadDistributedBeam3 by import file.
+- `apex.environment.createDFEMFieldLoadDistributedByFileImport`
+- `apex.environment.createDFEMFieldMomentComponent` — Create DFEMFieldMomentComponent in this environment.
+- `apex.environment.createDFEMFieldMomentComponentByFileImport` — Create DFEMFieldMomentComponent by import file.
+- `apex.environment.createDFEMFieldMomentFollowerNormal` — Create DFEMFieldMomentFollowerComponent in this environment.
+- `apex.environment.createDFEMFieldMomentFollowerNormalByFileImport` — Create DFEMFieldMomentFollowerNormal by import file.
+- `apex.environment.createDFEMFieldMomentFollowerVector` — Create DFEMFieldMomentFollowerVector in this environment.
+- `apex.environment.createDFEMFieldMomentFollowerVectorByFileImport` — Create DFEMFieldMomentFollowerVector by import file.
+- `apex.environment.createDFEMFieldPhaseLead` — Create DFEMFieldPhaseLead in this environment.
+- `apex.environment.createDFEMFieldPhaseLeadByFileImport` — Create DFEMFieldPhaseLead by import file.
+- `apex.environment.createDFEMFieldPressure` — Create DFEMFieldPressure in this environment.
+- `apex.environment.createDFEMFieldPressure2D`
+- `apex.environment.createDFEMFieldPressure2DByFileImport`
+- `apex.environment.createDFEMFieldPressureArea` — Create DFEMFieldPressureArea in this environment.
+- `apex.environment.createDFEMFieldPressureAreaByFileImport` — Create DFEMFieldPressureArea by import file.
+- `apex.environment.createDFEMFieldPressureByFileImport` — Create DFEMFieldPressure by import file.
+- `apex.environment.createDFEMFieldSupportFreeBody` — Create DFEMFieldSupportFreeBody in this environment.
+- `apex.environment.createDFEMFieldSupportFreeBodyByFileImport`
+- `apex.environment.createDFEMFieldTemperatureGradient2D` — Create DFEMFieldTemperatureGradient2D in this environment.
+- `apex.environment.createDFEMFieldTemperatureGradient2DByFileImport` — Create DFEMFieldTemperatureGradient2D by import file.
+- `apex.environment.createDFEMFieldTemperatureGradient2DHeat` — Create DFEMFieldTemperatureGradient2DHeat in this environment.
+- `apex.environment.createDFEMFieldTemperatureGradient2DHeatByFileImport` — Create DFEMFieldTemperatureGradient2DHeat by import file.
+- `apex.environment.createDFEMFieldTemperatureGradientBeam2` — Create DiFEMFieldTemperatureGradientBeam2 in this environment.
+- `apex.environment.createDFEMFieldTemperatureGradientBeam2ByFileImport` — Create DFEMFieldTemperatureGradientBeam2 by import file.
+- `apex.environment.createDFEMFieldTemperatureGradientBeam3` — Create DFEMFieldTemperatureGradientBeam3 in this environment.
+- `apex.environment.createDFEMFieldTemperatureGradientBeam3ByFileImport` — Create DFEMFieldTemperatureGradientBeam3 by import file.
+- `apex.environment.createDFEMFieldTemperatureNodal` — Create DFEMFieldTemperatureNodal in this environment.
+- `apex.environment.createDFEMFieldTemperatureNodalByFileImport` — Create DFEMFieldTemperatureNodal by import file.
+- `apex.environment.createDFEMFieldTimeDelay` — Create DFEMFieldTimeDelay in this environment.
+- `apex.environment.createDFEMFieldTimeDelayByFileImport` — Create DFEMFieldTimeDelay by import file.
+- `apex.attribute.createDamper1DRepProperties` — Creates Damper1DRepProperties.
+- `apex.post.createDataSeriesOverSteps` — Creates a DataSeriesOverSteps for use in plotting XY chart diagrams based on targets results.
+- `apex.post.createDataSeriesTimeHistory` — Creates a DataSeriesTimeHistory for use in XY Charting.
+- `apex.post.createDataSeriesVMTBeamSpan` — Creates a DataSeriesVMTBeamSpan for use in plotting VMT diagrams based on Beam Spans.
+- `apex.post.createDataSeriesVMTSensorArray` — Create a DataSeriesVMTSensorArray for use in plotting VMT diagrams based on X-Section Sensor Arrays.
+- `apex.createDataTable2Col` — Create a DataTable2Col.
+- `apex.createDataTable3Col` — Create a DataTable3Col.
+- `apex.gendes.createDesignSpaceFromParts` — Creates and returns a DesignSpace object from a collection of Parts or geometry bodies. The DesignSpace will have a cuboid shape, sized to completely enclose the input Parts / Bodies using a bounding box algorithm. Input arguments control whether the bounding box will be oriented with the global rectangular coordinate system or with the target Parts / bodies(object oriented). The bounding box may also be scaled to ensure some clearance between the boundary faces and the target Parts / Bodies. The DesignSpace and its associated geometry Solid will be created in a new Part. A symmetric DesignSpace may be requested using optional arguments.
+- `apex.gendes.createDesignSpaceFromSolid` — Creates and returns a DesignSpace object from a single geometry Solid that represents the full volume of the DesignSpace. The DesignSpace can optionally be scaled relative to the input Solid. The DesignSpace and the associated geometry Solid will be created in a new Part. A symmetric DesignSpace may be requested using optional arguments. If symmetry is created, a segment of the input Solid will be extracted and used as the master segment of the symmetric DesignSpace.
+- `apex.createDesignVariable` — Create a new DesignVariable in a Model.
+- `apex.attribute.createDiscreteFEMField` — Creates and returns one DiscreteFEMField.
+- `apex.environment.createDisplacementConstraint` — Create a new DisplacementConstraint in this environment. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: createConstraintDisplacement().
+- `apex.attribute.createDisplacementConstraintProperties` — Create a new DisplacementConstraintProperty. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: createConstraintDisplacement().
+- `apex.attribute.createEIGB` — create EIGB object
+- `apex.attribute.createEIGR` — create EIGR object
+- `apex.attribute.createEIGRL` — create EIGRL object
+- `apex.geometry.createEdgeOffset` — Creates new Edges on Surface or Solid Faces by offsetting the input Edges by the input offset distance. Care must be taken to specify an offsetDistance that will cause some portion of the new Edge to remain within the Body that composes the input Edge. The offset edge can be offset with sharp corners or rounded corners.
+- `apex.mesh.createEdgeSeedBiasedByLength` — Create a biased Edge Seed on a target Edge or MeshDependentTie by defining the required Maximum and Minimum element edge lengths.
+- `apex.mesh.createEdgeSeedBiasedByNumber` — Create a biased Edge Seed on a target Edge or MeshDependentTie by defining the required number of element edges and a Max/Min element edge length ratio.
+- `apex.mesh.createEdgeSeedUniformByLength` — Define the number of elements along a particular edge of the model to create an "EdgeSeed" by specifying the target element edge length. This length, in conjunction wit the target edge length, will be used to determine the number of seed points to create.
+- `apex.mesh.createEdgeSeedUniformByNumber` — Define the number of elements along a particular edge of the model to create a "EdgeSeed" by specifying a uniformly spaced number of elements.
+- `apex.geometry.createEllipsoidByLocationOrientation` — Creates and returns a parametric geometry solid Ellipsoid using an input origin, orientation, and three orthogonal "radii" - xradius, yradius and zradius.
+- `apex.environment.createEnforcedMotion` — Get a new EnforcedMotion in this environment. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: createLoadEnforcedMotionTotal().
+- `apex.environment.createEnforcedMotionDynamicRepByComponent` — Get a new ForceMomentRep in this environment. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: createLoadEnforcedMotionTotal().
+- `apex.environment.createEnforcedMotionStaticRepByComponent` — Get a new ForceMomentRep in this environment. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: createLoadEnforcedMotionTotal().
+- `apex.environment.createEnforcedMotionStaticRepByResultant` — Get a new ForceMomentRep in this environment. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: createLoadEnforcedMotionTotal().
+- `apex.geometry.createEnvelope` — create envelope sensor The input
+- `apex.geometry.createFacetedBodies` — Creates one or more FacetedCurve/FacetedSurface/FacetedSolid and optionally one or more NURBS GeometryBodies from one or more sets of tessellation (PolyData) objects and optional mesh data. It adds all of the the created geometry to the specified input part, or to the Parts they are members of if none specified. The faceted bodies and the optional NURBS bodies are returned as a list of GeometryBodyCollections. One GeometryBodyCollection for each polydata tessellation object, and in the output will be in the same order as the input data. If the input tessellation consists of more than one contiguous region of cells, one discrete faceted body and optionally one discrete NURBS GeometryBody will be generated for each contiguous region. If the input tessellation was generated using a CurveMesh/SurfaceMesh/SolidMesh, that mesh will be associated to the corresponding faceted body types.
+- `apex.geometry.createFacetedBody` — Creates one or more FacetedSurfaces/FacetdSolids from the input Tesselation2D and adds it to the input Part. The FacetedSurfaces/FacetdSolids are returned as a FacetedSurfaceCollection/FacetedSolidCollection If the input PolyData consists of more than one contiguous region of cells, one FacetedSurface/FacetedSolid will be generated for each contiguous region. If the input PolyData was generated using a SurfaceMesh/SolidMesh, that SurfaceMesh/SolidMesh will be associated to the FacetedSurface/FacetedSolid. If that SurfaceMesh/SolidMesh consisted of more than one contiguous mesh region, multiple FacetedSurfaces/FacetSolids will be created, one for each contiguous mesh region and each contiguous region of the original SurfaceMesh/SolidMesh will become a distinct SurfaceMesh/SolidMesh associated to the corresponding FacetedSurface/FacetedSolid.
+- `apex.attribute.createFastenerRepProperties` — Create a fastener property.
+- `apex.attribute.createFieldMaterialOrientationAlignCurve` — Create an MaterialOrientation to a region of the model and aligns the Material axis using a director apex.geometry.Curve or apex.geometry.Edge and returns a MaterialOrientationField2DAlignCurve.
+- `apex.attribute.createFieldMaterialOrientationFromCoordinate` — Create an MaterialOrientation to a region of the model, aligns the material axis using a apex.construct.CoordinateSystem axis and returns a MaterialOrientationField2DCoordinate.
+- `apex.attribute.createFieldMidSurfaceFromSolids` — Creates and returns one or more fields (thickness, offset) from the input Surfaces/Faces and Solids and assigns the fields to the meshes/elements associated with Surfaces/Faces. The input Surfaces must be meshed. The method assumes that the input Surface/Faces represent the mid-surface of the input Solids therefore the input Surfaces/Faces must be reasonably positioned w.r.t. the Solid mid-surface location for the method to effective although it is NOT required that the input Surfaces/Faces were created by the mid-surface tool. If None of the input Surfaces/Faces are meshed the method will throw an exception. If some of the input Surfaces/Faces are meshed Apex will attempt to create fields and assign them to those input Surfaces/Faces and will ignore any unmeshed Faces/Surfaces Several parameters to control how the thickness and offsets of the fields are created as provided as input arguments. The method returns zero or more fields in a field Collection - if no fields could be calculated, the Collection will be empty. Each field will be assigned to a collection of Elements from the input Surfaces/Faces.
+- `apex.attribute.createFieldThicknessOffsetConstant` — Creates and returns one field (thickness, offset) from the input Surfaces/Faces/Elements/Meshs/Solids/Parts and assigns the fields to the meshes/elements associated with Surfaces/Faces/Solids/Parts. The input geometry must be meshed.
+- `apex.attribute.createFlexibleLinkRepProperties` — Creates FlexibleLinkRepProperties.
+- `apex.environment.createForceMoment` — Get a new ForceMoment in this environment. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: createLoadForceComponent(), createLoadMomentComponent().
+- `apex.environment.createForceMomentDynamicRepByComponent` — Get a new ForceMomentRep in this environment. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: createLoadForceComponent(), createLoadMomentComponent().
+- `apex.environment.createForceMomentStaticRepByComponent` — Get a new ForceMomentRep in this environment. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: createLoadForceComponent(), createLoadMomentComponent().
+- `apex.environment.createForceMomentStaticRepByResultant` — Get a new ForceMomentRep in this environment. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: createLoadForceComponent(), createLoadMomentComponent().
+- `apex.gendes.createGDconfiguration` — Create a generative design configuration by assigning different "roles" to Apex Parts/Bodies. Note that at this time, the final design space is not created until the configuration is applied.
+- `apex.attribute.createGapRepProperties` — Creates GapRepProperties.
+- `apex.geometry.createGeometryExtrude` — Creates GeometryBodies (Surfaces, Curves, Points) by extruding Surfaces, Faces, Edges, Vertices or Points along a vector.
+- `apex.geometry.createGeometryRevolve` — Creates GeometryBodies (Surfaces, Curves, Points) by revolving Surfaces, Faces, Edges, Vertices or Points around an axis.
+- `apex.geometry.createGeometrySweepGuides` — Creates and returns a GeometryBody (Solid or Surface) by sweeping a profile (Surface, Faces, Curve or Edges) along a director path defined by a Curve or by multiple contiguous Edges and extended control of the shape of the generated body provided by additional guide paths.
+- `apex.geometry.createGeometrySweepPath` — Creates and returns a GeometryBody (Solid, Surface) by sweeping target profile(s) represented by Surfaces, Faces, Curves or Edges along a director path defined using a Curve or collection of contiguous Edges. The cross section of the generated body matches the shape of the profile(s).
+- `apex.geometry.createGeometrySweepPathAlignFace` — Creates and returns a GeometryBody by sweeping an input target profile along a director path and controlling the orientation of the profile using a Surface or collection of faces Faces.
+- `apex.environment.createGravity` — Create a new Gravity in this environment.
+- `apex.environment.createGravityByG` — Create a new Gravity by a gravity constant in this environment.
+- `apex.createGroup` — Creates and return a persistent Group entity with a non-volatile name.
+- `apex.attribute.createHYBDAMP` — Create and return HYBDAMP.
+- `apex.mesh.createHexMesh` — create hex mesh.
+- `apex.mesh.createHybridMesh` — Create hybrid mesh, where quad or adjacent hexes on the bodies faces are transitioned to tets via pyramid elements. An optional Hex core can be requested where tets transition back to hexes via a layer of pyramid elements. If the outer layers are all tria or adjacent tets, and if no hex core is requested, then the result will be entirely tet elements. In that case, the tet mesher should be used instead.
+- `apex.attribute.createITER` — create ITER object
+- `apex.environment.createInitialDisplacementVelocity` — Create InitialDisplacementVelocity in this environment.
+- `apex.environment.createInitialDisplacementVelocityVariable` — Create InitialDisplacementVelocityVariable in this environment.
+- `apex.environment.createInitialStrain` — Create InitialStrain in this environment.
+- `apex.environment.createInitialStrainVariable` — Create InitialStrainVariable in this environment.
+- `apex.environment.createInitialStress` — Create InitialStress in this environment.
+- `apex.environment.createInitialStressVariable` — Create InitialStressVariable in this environment.
+- `apex.environment.createInitialTemperatureDefault` — Create InitialTemperatureDefault in this environment.
+- `apex.environment.createInitialTemperatureGradient2D` — Create InitialTemperatureGradient2D in this environment. Note it must be applied to the nodes on the surface elements.
+- `apex.environment.createInitialTemperatureGradient2DHeat` — Create InitialTemperatureGradient2DHeat in this environment.
+- `apex.environment.createInitialTemperatureGradient2DHeatVariable` — Create InitialTemperatureGradient2DHeatVariable in this environment.
+- `apex.environment.createInitialTemperatureGradient2DVariable` — Create InitialTemperatureGradient2DVariable in this environment. Note it must be applied to the nodes on the surface elements.
+- `apex.environment.createInitialTemperatureGradientBeam2` — Create InitialTemperatureGradientBeam2 in this environment.
+- `apex.environment.createInitialTemperatureGradientBeam2Variable` — Create InitialTemperatureGradientBeam2Variable in this environment.
+- `apex.environment.createInitialTemperatureGradientBeam3` — Create InitialTemperatureGradientBeam3 in this environment.
+- `apex.environment.createInitialTemperatureGradientBeam3Variable` — Create InitialTemperatureGradientBeam3Variable in this environment.
+- `apex.environment.createInitialTemperatureNodal` — Create InitialTemperatureNodal in this environment.
+- `apex.environment.createInitialTemperatureNodalVariable` — Create InitialTemperatureNodalVariable in this environment.
+- `apex.attribute.createInteractionAutoPair` — Creates and returns one or more interaction based on an input collection of Geometry and/or Mesh bodies and tolerance parameters.
+- `apex.attribute.createInteractionManualPair` — Creates and returns an Interaction based on two inputs each representing opposite sides of the interaction.
+- `apex.attribute.createInteractionPropertyGeometric` — Creates and returns an Interaction properties.
+- `apex.attribute.createInteractionPropertyPhysical` — Creates and returns an Interaction Physical properties.
+- `apex.attribute.createInterfacePoint` — Creates and returns an InterfacePoint.
+- `apex.attribute.createJointCylindrical` — Create a new CylindricalJoint entity.
+- `apex.attribute.createJointPlanar` — Create a new PlanarJoint entity.
+- `apex.attribute.createJointPrismatic` — Create a new PrismaticJoint entity.
+- `apex.attribute.createJointRevolute` — Create a new RevoluteJoint entity.
+- `apex.attribute.createJointSpherical` — Create a new SphericalJoint entity.
+- `apex.post.createKeyResult` — Create a KeyResult and adds it to the KeyResultCatalog.
+- `apex.attribute.createLayeredPanel` — Creates and returns a LayeredPanel using an input Surface. The LayeredPanel is added to the parent Part of the input Surface.
+- `apex.environment.createLoadAccelerationNodal` — Create LoadAccelerationNodal in this environment.
+- `apex.environment.createLoadAccelerationNodalVariable` — Create LoadAccelerationNodalVariable in this environment.
+- `apex.environment.createLoadAccelerationSpatial` — Create LoadAccelerationSpatial in this environment.
+- `apex.environment.createLoadAreaFactor` — Create LoadAreaFactor in this environment.
+- `apex.environment.createLoadAreaFactorVariable`
+- `apex.environment.createLoadCombinationDynamic` — Create a LoadCombinationDynamic object in this environment.
+- `apex.environment.createLoadCombinationStatic` — Create a LoadCombinationStatic object in this environment.
+- `apex.environment.createLoadDeformationAxial` — Create LoadDeformationAxial in this environment.
+- `apex.environment.createLoadDeformationAxialVariable` — Create LoadDeformationAxialVariable in this environment.
+- `apex.environment.createLoadDistributed` — Create LoadDistributed in this environment.
+- `apex.environment.createLoadDistributedBeam2` — Create LoadDistributedBeam2 in this environment.
+- `apex.environment.createLoadDistributedBeam2Variable` — Create LoadDistributedBeam2Variable in this environment.
+- `apex.environment.createLoadDistributedBeam3` — Create LoadDistributedBeam3 in this environment.
+- `apex.environment.createLoadDistributedBeam3Variable` — Create LoadDistributedBeam3Variable in this environment.
+- `apex.environment.createLoadDistributedVariable` — Create LoadDistributedVariable in this environment.
+- `apex.environment.createLoadDynamicAcoustic` — Create LoadDynamicAcoustic.
+- `apex.environment.createLoadDynamicFrequency1` — Create LoadDynamicFrequency1 in this environment.
+- `apex.environment.createLoadDynamicFrequency2` — Create LoadDynamicFrequency2 in this environment.
+- `apex.environment.createLoadDynamicTimeAnalytical` — Create LoadDynamicTimeAnalytical in this environment.
+- `apex.environment.createLoadDynamicTimeTabular` — Create LoadDynamicTimeTabular in this environment.
+- `apex.environment.createLoadEnforcedMotionRelative` — Create LoadEnforcedMotionRelative in this environment.
+- `apex.environment.createLoadEnforcedMotionRelativeVariable` — Create LoadEnforcedMotionRelativeVariable in this environment.
+- `apex.environment.createLoadEnforcedMotionTotal` — Create LoadEnforcedMotionTotal in this environment.
+- `apex.environment.createLoadEnforcedMotionTotalVariable` — Create LoadEnforcedMotionTotalVariable in this environment.
+- `apex.environment.createLoadForceComponent` — Create a LoadForceComponent in this environment.
+- `apex.environment.createLoadForceComponentVariable` — Create a LoadForceComponentVariable in this environment.
+- `apex.environment.createLoadForceFollowerNormal` — Create LoadForceFollowerNormal in this environment.
+- `apex.environment.createLoadForceFollowerNormalVariable` — Create LoadForceFollowerNormalVariable in this environment.
+- `apex.environment.createLoadForceFollowerVector` — Create LoadForceFollowerVector in this environment.
+- `apex.environment.createLoadForceFollowerVectorVariable` — Create LoadForceFollowerVectorVariable in this environment.
+- `apex.environment.createLoadForceRotational` — Create LoadForceRotational in this environment.
+- `apex.environment.createLoadLug` — Create a LoadLug in this environment.
+- `apex.environment.createLoadLugPropertyStatic` — Create LoadLugPropertyStatic.
+- `apex.environment.createLoadMomentComponent` — Create LoadMomentComponent in this environment.
+- `apex.environment.createLoadMomentComponentVariable` — Create LoadMomentComponentVariable in this environment.
+- `apex.environment.createLoadMomentFollowerNormal` — Create LoadMomentFollowerNormal in this environment.
+- `apex.environment.createLoadMomentFollowerNormalVariable` — Create LoadMomentFollowerNormalVariable in this environment.
+- `apex.environment.createLoadMomentFollowerVector` — Create LoadMomentFollowerVector in this environment.
+- `apex.environment.createLoadMomentFollowerVectorVariable` — Create LoadMomentFollowerVectorVariable in this environment.
+- `apex.environment.createLoadPhaseLead` — Create LoadPhaseLead in this environment.
+- `apex.environment.createLoadPhaseLeadVariable` — Create LoadPhaseLeadVariable in this environment.
+- `apex.environment.createLoadPressure` — Create a new LoadPressure in this environment, it returns a LoadPressure. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: createPressureConstant(), createPressureVariable().
+- `apex.environment.createLoadPressure2D` — Create LoadPressured2D in this environment.
+- `apex.environment.createLoadPressure2DVariable` — Create LoadPressured2DVariable in this environment.
+- `apex.environment.createLoadPressureArea` — Create LoadPressuredArea in this environment.
+- `apex.environment.createLoadPressureAreaVariable` — Create LoadPressuredAreaVariable in this environment.
+- `apex.environment.createLoadTemperature` — Creates a LoadTemperature in this environment. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: createLoadTemperatureNodal(), createLoadTemperatureNodalVariable().
+- `apex.environment.createLoadTemperatureDefault` — Create LoadTemperatureDefault in this environment.
+- `apex.environment.createLoadTemperatureGradient2D` — Create LoadTemperatureGradient2D in this environment.
+- `apex.environment.createLoadTemperatureGradient2DHeat` — Create LoadTemperatureGradient2DHeat in this environment.
+- `apex.environment.createLoadTemperatureGradient2DHeatVariable` — Create LoadTemperatureGradient2DHeatVariable in this environment.
+- `apex.environment.createLoadTemperatureGradient2DVariable` — Create LoadTemperatureGradient2DVariable in this environment.
+- `apex.environment.createLoadTemperatureGradientBeam2` — Create LoadTemperatureGradientBeam2 in this environment.
+- `apex.environment.createLoadTemperatureGradientBeam2Variable` — Create LoadTemperatureGradientBeam2Variable in this environment.
+- `apex.environment.createLoadTemperatureGradientBeam3` — Create LoadTemperaturGradientBeam3 in this environment.
+- `apex.environment.createLoadTemperatureGradientBeam3Variable` — Create LoadTemperatureGradientBeam3Variable in this environment.
+- `apex.environment.createLoadTemperatureNodal` — Create LoadTemperatureNodal in this environment.
+- `apex.environment.createLoadTemperatureNodalVariable` — Create LoadTemperatureNodalVariable in this environment.
+- `apex.environment.createLoadTimeDelay` — Create LoadTimeDelay in this environment.
+- `apex.environment.createLoadTimeDelayVariable` — Create LoadTimeDelayVariable in this environment.
+- `apex.environment.createLoadTotal` — Create LoadTotal in this environment.
+- `apex.environment.createLoadTraction` — Create a TractionLoad in this environment. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: createLoadDistributed(), createLoadTotal().
+- `apex.environment.createLoadTractionPropertyStaticConstant` — Creates a LoadTractionPropertyStaticConstant. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: createLoadDistributed(), createLoadTotal().
+- `apex.environment.createLoadTractionPropertyStaticTotal` — Creates a LoadTractionPropertyStaticTotal. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: createLoadDistributed(), createLoadTotal().
+- `apex.construct.createLocationByCoordinates` — Create a new Location.
+- `apex.construct.createLocationByEntity` — Create a new Location.
+- `apex.catalog.createMaterial` — Creates a Material and adds it to the Material catalog. Note that the material can be added under a Material Class or a Material Subclass if the name is provided.
+- `apex.attribute.createMaterialSheet` — Creates and returns a MaterialSheet and adds it to the Material catalog.
+- `apex.attribute.createMaterialSheetStack` — Creates and returns a MaterialSheetStack and adds it to the Materials catalog. Input arguments define the order and relative orientations of the MaterialSheets within the stack and enable creation of symmetric stacks based on definition of just half of the stacked sheets.
+- `apex.geometry.createMeshControlEdges` — Creates and returns MeshControlEdges on the input target Faces using the input edges and curves. The input Curves and Edges are projected onto the target Solids, Surfaces and Faces. If a curve/edge has a valid projection onto a target Face, a MeshControlEdge is created on the Face. All MeshControlEdges that are created by the method are returned as a MeshControlEdgeCollection. If no MeshControlEdges are created, an empty collection is returned.
+- `apex.attribute.createMeshDependentTie` — Creates one or more MeshDependentTies from the input geometry topology and returns them in a MeshDependentTieCollection. MeshDependentTies can be created between the Edges/Faces of Surfaces/Solids. When a tie is created between a Face and an Edge, a new 'virtual' Edge is added to the Face and the tie is actually created between this 'virtual' Edge and the 'real' Edge.
+- `apex.geometry.createMidSurfaceBetweenFaces` — creates mid-surface body for each face pair in the target list.
+- `apex.geometry.createMidSurfaceFixedOffset` — creates mid-surface body for each solid in the target list.
+- `apex.createModel` — Closes current model and creates a new model.
+- `apex.createModelSet3Nastran` — Creates and returns a ModelSet3Nastran The ModelSet3Nastran may optionally be initialized with an id, set type and list of ids.
+- `apex.attribute.createNLSTEP` — Create and return NLSTEP.
+- `apex.attribute.createNSMCombination` — Creates and returns a NSMCombination.
+- `apex.mesh.createNodeByCurveArcCenter` — create a collection of nodes by Curve Arc Center.
+- `apex.mesh.createNodeByCurveIntersection` — create a collection of nodes by Curve Intersection.
+- `apex.mesh.createNodeByLocation` — Create a node by 3D location.
+- `apex.mesh.createNodeByPickLocation` — DEPRECATED: In releases of Apex prior to Iberian Lynx this argument was of type apex.construct.Point3D. In the Iberian Lynx release the argument type has been changed to apex.ILocation. For the Iberian Lynx release, users may continue to pass Point3D objects however this capability may be deprecated in a future release therefore users are advised to transition their code to use apex.ILocation as quickly as possible to avoid future problems. create a collection of nodes by Pick Location.
+- `apex.attribute.createNodeTie` — Create a new NodeTie entity.
+- `apex.gendes.createNonDesignRegionDirectMethod` — Creates and returns a non design region for use in generative design simulations. The extent of the non-design region is based on the input geometry Cells.
+- `apex.gendes.createNonDesignRegionOffsetMethod` — Creates and returns a non design region for use in generative design simulations. The extent of the non-design region is based on the geometry Cell offsetting from faces.
+- `apex.attribute.createNonstructuralMassConstant` — Create a new constant NonstructuralMass.
+- `apex.attribute.createNonstructuralMassVariable` — Create a new variable NonstructuralMass.
+- `apex.geometry.createNurbsFromFacetedBody` — This is the simple form of the Automatic Create NURBS From Facet Body tool. This takes as input a single Facetbody Surface or Solid, and returns a real geometry (NURBS) solid or surface. Never more than one solid or Surface will be returned. The size parameter is used to determine the approximate size of the created Faces. If the target is a Faceted Solid body, the output will usually be solid body, and if a Faceted Surface body, the result will normally be a single Surface Body. If the size is not specified, or the size is less than or equal to 0.0, Then it will be calculated automatically based on a fraction of the over all input Body.
+- `apex.construct.createOptionOrientation` — Create a new Orientation with default options.
+- `apex.construct.createOrientation` — Create a new Orientation.
+- `apex.construct.createOrientationByCoordinateSystem` — Create a new Orientation in terms of a coordinate system.
+- `apex.createPart` — Create a new Part in a Model.
+- `apex.createPartPropertyRigid` — Create a rigid part rep.
+- `apex.geometry.createPointCurveIntersect` — create a point
+- `apex.geometry.createPointCurveSurface` — Creates and returns Points at ther intersections of the input Curves and Surfaces/Faces/DatumPlanes.
+- `apex.geometry.createPointLocation` — DEPRECATED: In the Iberian Lynx release the argument type has been changed to apex.ILocationCollection. For the Iberian Lynx release, users may continue to pass List Of Point3D objects however this capability may be deprecated in a future release therefore users are advised to transition their code to use apex.ILocationCollection as quickly as possible to avoid future problems. create a point.
+- `apex.attribute.createPointMass` — Create a new PointMass.
+- `apex.attribute.createPointMassByMassMatrix` — Create a new PointMass by Matrix.
+- `apex.geometry.createPointPickedLocation` — DEPRECATED: This function has been deprecated since Jaguar and we intend to remove it in the next Apex release. Instead use api apex.geometry.createPointLocation(). create a point.
+- `apex.instrument.createPointSensor` — Create a new PointSensor.
+- `apex.geometry.createPointXYZ` — create a point
+- `apex.geometry.createPolyData` — Creates and returns a PolyData object from an input SurfaceMesh or SolidMesh. Based on the input arguments, the method determines which Nodes, Element Edges and Elements will best represent the Vertices, Edges and Faces of an equivalent geometry Surface/Solid and includes them as member data in the returned PolyData. The PolyData object can then be used as input to create a FacetedSurface/FacetedSolid although more usually some adjustment of the automatically calculated Vertex, Edge and Face topology groupings is required using the methods supplied by the PolyData class.
+- `apex.geometry.createPolyDataList` — Creates and returns a list of PolyData objects matching up with an input MeshBodyCollection. Based on the input arguments, the method determines which Nodes, Element Edges and Elements will best represent the Vertices, Edges and Faces of an equivalent MeshBody and includes them as member data in each returned PolyData object in the list. The PolyData object can then be used as input to create a FacetedBodies although more usually some adjustment of the automatically calculated Vertex, Edge and Face topology groupings is required using the methods supplied by the PolyData class.
+- `apex.environment.createPreloadBolt` — Create a Bolt preload object in this environment.
+- `apex.environment.createPreloadBoltPropertyStatic` — Create static bolt preload property.
+- `apex.environment.createPressureConstant` — Create Pressure in this environment.
+- `apex.environment.createPressurePropertyStaticConstant` — Create a LoadPressurePropertyStaticConstant. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: createPressureConstant().
+- `apex.environment.createPressurePropertyStaticVariable` — Create a LoadPressurePropertyStaticVariable. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: createPressureVariable().
+- `apex.environment.createPressureVariable`
+- `apex.catalog.createPropertiesElement2D` — Creates and returns a PropertiesElement2D in the catalog.
+- `apex.catalog.createPropertiesElement3D` — Creates and returns a PropertiesElement3D in the catalog.
+- `apex.catalog.createPropertiesElement3DHomogeneous` — Creates a PropertiesElement3DHomogeneous and adds it to the CatalogElementProperty.
+- `apex.utility.createProximitySearch` — This method creates an instance of a ProximitySearch class. ProximitySearch objects provide high performance methods to find an object within a collection of candidate objects that are physically closest to a point in space or to another object The method returns a ProximitySearch object.
+- `apex.attribute.createQuasiStaticScenarioFromKeyResults` — Creates and returns a Static Scenario based on the input of ModelAssociation and KeyResults. This method takes a ModelAssociation and one or more keyResults as the input. From this input the method will create, 1.One or more ForceMoments with one or more ForceMometReps. One ForceMoment will be created for each NodeTie that is associated to an InterfacePoint within the input ModelAssociation. A series of ForceMomentReps will be created within each ForceMoment, corresponding to the number of keyResults provided in the input. 2.A single Static Scenario that references the primary Assembly from the input ModelAssociation as its Scenario ModelRep. 3.One Event will be created for each keyResult provided in the input. Each Event will reference the ForceMoments associated with the KeyResults. Each Event will have InertiaRelief enabled and will include no constraints.
+- `apex.attribute.createRANDPS` — create RANDPS set object
+- `apex.attribute.createRANDT1` — create RANDT1 set object
+- `apex.attribute.createRCROSS` — Create and return RCROSS.
+- `apex.createRegion` — Creates and return a persistent Region entity with a non-volatile name.
+- `apex.attribute.createRemotePointEntity` — Create a new remote point entity.
+- `apex.post.createResultProbe0D` — Create a results 0D Probe that can be used to probe DataVisualizations.
+- `apex.attribute.createRigidFace` — Creates and returns a rigid face collection.
+- `apex.attribute.createRigidLinkRepProperties` — Creates RigidLinkRepProperties.
+- `apex.attribute.createSectionsMidsurfaceFromSolids` — This Function is no longer supported in Apex. Refer to apex.attribute.createFieldMidSurfaceFromSolids to determine how this capability is now supported.
+- `apex.mesh.createSeedPointBySelectedLocation` — DEPRECATED: In releases of Apex prior to Iberian Lynx this argument was of type apex.construct.Point3D. In the Iberian Lynx release the argument type has been changed to apex.ILocation. For the Iberian Lynx release, users may continue to pass Point3D objects however this capability may be deprecated in a future release therefore users are advised to transition their code to use apex.ILocation as quickly as possible to avoid future problems. Creates and returns a SeedPoint on the "target" (Face, Edge) at the point where "location" projects onto the target. The method will not create a SeedPoint and will throw an exception if any of the belwo conditions exist, 1) If the distance between the "location" and the projected point on the "target" exceeds the "searchDistance" 2) If the projected point lies on a Face and is within "cleanupTolerance" of an existing Edge 3) If the projected point lies on an Edge and is within "cleanupTolerance" of an existing Vertex 4) If the projected point lies on the "target" and is within "cleanupTolerance" of an existing SeedPoint.
+- `apex.mesh.createSeedPointsBySourceTarget` — create a collection of seed points by source vertex and target edge/face.
+- `apex.attribute.createShearPanel` — This Function is no longer supported in Apex. Refer to apex.catalog.createPropertiesElement2D to determine how this capability is now supported.
+- `apex.attribute.createShell` — This Function is no longer supported in Apex. Refer to apex.catalog.createPropertiesElement2D to determine how this capability is now supported.
+- `apex.catalog.createShellBehaviorShearPanel` — This Function is no longer supported in Apex. Refer to apex.catalog.createPropertiesElement2D to determine how this capability is now supported.
+- `apex.catalog.createShellBehaviorThinShell` — This Function is no longer supported in Apex. Refer to apex.catalog.createPropertiesElement2D to determine how this capability is now supported.
+- `apex.catalog.createShellSection` — This Function is no longer supported in Apex. Refer to apex.attribute.createFieldThicknessOffsetConstant to determine how this capability is now supported.
+- `apex.mesh.createShrinkWrapMesh` — create shrink wrap mesh.
+- `apex.attribute.createSimpleShell` — This Function is no longer supported in Apex. Refer to apex.catalog.createPropertiesElement2D to determine how this capability is now supported.
+- `apex.construct.createSketchForProfile1D` — Create and initialize the sketch for Profile1D.
+- `apex.mesh.createSolidMesh` — Creates and returns one or more tetrahedral solid meshes using the input geometry and meshing parameters.
+- `apex.geometry.createSphereByCoordinateSystem` — Creates and returns a parametric geometry solid Sphere using an external coordinate system to define the origin and orientation of the Sphere and radius to define its size.
+- `apex.geometry.createSphereByLocationOrientation` — Creates and returns a parametric geometry solid Sphere using an input origin, orientation and radius.
+- `apex.attribute.createSpring1DRepProperties` — Create a Spring1DRepProperties.
+- `apex.attribute.createSpringDamper1DRepProperties` — Create a SpringDamper1DRepProperties.
+- `apex.post.createStatePlot` — Creates and returns a StatePlot object. The "event" and optional "resultDataSetIndex" arguments are used to identify the results data that will be displayed in the plot. "event" identifies which Scenario that will be plotted. "resultDataSetIndex" index is required when the Event produces multiple discrete result data - for example, Normal Modes and Buckling simulations can give rise to multiple modes per event and the resultDataSetIndex is used to select which mode to use. In future releases, this index will also be used to select specific frequency, time and increment results data sets. The returned StatePlot is empty and hidden on creation and must be populated with DataVisualizations (Deform, Contour, Vector etc.) before it can display anything useful.
+- `apex.attribute.createStressStrainCurve` — This Function is no longer supported in Apex. Refer to apex.attribute.MaterialModel to determine how this capability is now supported.
+- `apex.environment.createSupportFreeBody` — Create SupportFreeBody in this environment.
+- `apex.environment.createSupportFreeBody1` — Create SupportFreeBody1 in this environment.
+- `apex.environment.createSupportFreeBody1Variable` — Create SupportFreeBody1Variable in this environment.
+- `apex.environment.createSupportFreeBodyVariable` — Create SupportFreeBodyVariable in this environment.
+- `apex.geometry.createSurfaceLofted` — boolean subtract subtractingEntity from target
+- `apex.mesh.createSurfaceMesh` — create surface mesh.
+- `apex.attribute.createTABDMP1` — Create and return TABDMP1.
+- `apex.chart.createTABLED1` — create TABLED1
+- `apex.chart.createTABLED2` — create TABLED2
+- `apex.chart.createTABLED3` — create TABLED3
+- `apex.chart.createTABLED4` — create TABLED4
+- `apex.attribute.createTABRND1` — Create and return TABRND1.
+- `apex.attribute.createTSTEP` — create TSTEP object
+- `apex.environment.createTemperatureInitialConditionConstant` — Create an initial temperature condition. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: createInitialTemperatureNodal().
+- `apex.environment.createTemperaturePropertyStaticConstant` — Creates a LoadTemperaturePropertyStaticConstant. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: createLoadTemperatureNodal(), createLoadTemperatureNodalVariable().
+- `apex.environment.createTemperaturePropertyStaticVariable` — Creates a LoadTemperaturePropertyStaticVariable. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: createLoadTemperatureNodal(), createLoadTemperatureNodalVariable().
+- `apex.createUserAttribute` — Create a UserAttribute holding a Str, Int, Bool, or Float value. Only one of the arguments should be provided. UserAttributes can be added to Entities that support the IUserAttributes interface.
+- `apex.datavis.createVectorComponentColor` — Creates a VectorComponentColor empty map used for XSectionForceSensorPlot.
+- `apex.post.createVectorComponentColor` — Creates a VectorComponentColor empty map used for VectorVisualization.
+- `apex.instrument.createXSectionForceSensor` — Creates a Cross Section Force Sensor.
+- `apex.instrument.createXSectionForceSensorArrayBetweenEndpoints` — Creates a Cross Section Force Sensor Array, two or more XSectionForceSensors evenly spaced between the two end points and adds the sensors to the array.
+- `apex.post.createXSectionForceSensorPlot` — Create a Cross section force sensor plot from an input collection of XSectionForceSensors and a Scenario Event. The plot that is created will include the force sensor displays of every sensor in the collection based on the results data from the single Scenario Event.
+- `apex.post.createXSectionForceSensorPlotFromSensorArray` — Create a Cross section force sensor plot from an input XSectionForceSensorArray and Scenario Event. The plot that is created will include the force sensor displays of every sensor in the array, based on the results data from the single Scenario Event.
+- `apex.attribute.createYieldBarlat` — This Function is no longer supported in Apex. Refer to apex.attribute.MaterialModel to determine how this capability is now supported.
+- `apex.attribute.createYieldHill` — Constructor. Usage example: $$ New a Hills 1948 yield criteria yield criteria myYieldCriteria = apex.attributes.createYieldHill(r11 = 1.0, r22 = 1.0, r33 = 1.0, r12 = 1.0, r23 = 1.0, r13 = 1.0 )
+- `apex.attribute.createYieldImpCreep` — This Function is no longer supported in Apex. Refer to apex.attribute.MaterialModel to determine how this capability is now supported.
+- `apex.attribute.createYieldLinearMohr` — This Function is no longer supported in Apex. Refer to apex.attribute.MaterialModel to determine how this capability is now supported.
+- `apex.attribute.createYieldParabolicMohr` — This Function is no longer supported in Apex. Refer to apex.attribute.MaterialModel to determine how this capability is now supported.
+- `apex.attribute.createYieldVonMises` — This Function is no longer supported in Apex. Refer to apex.attribute.MaterialModel to determine how this capability is now supported.
+- `apex.currentModel` — Returns the Model that is current within the Apex session. (NOTE : Current Apex releases support only a single Model per session)
+- `apex.geometry.curveCollection` — This function has been deprecated and we intend to remove it in the next Apex release. Instead use the standard constuctor apex.geometry.CurveCollection().
+- `apex.construct.datum3PointPlane` — datum3PointPlane creates a datum plane from three points using two or three locations in the form of an iphysicalCollection. If three points are supplied, the planes origin will be the first point. The plane orientation will be calculated from the three point plane of the three inputs ILocations. If only two locations are specified, then the plane origin will be the first point, and oriented perpendicular to the vector between location 1 and location 2.
+- `apex.construct.datumFromCoordinateSystem` — A datum plane is created from a coordinate system by using datumFromCoordinateSystem. The input is a CoordinateSystem object, and a specified axis. The global model coordinate frame is the default location, with the z axis as the default orientation.
+- `apex.construct.datumFromPlane` — datumFromPlane takes as input a an Apex Plane class, and creates a datumPlane at the planes location and orientation.
+- `apex.construct.datumFromPointOnGeometry` — datumFromPointOnGeometry is used to define a datumPlane by specifying the location on an Edge or Face. The two arguments represent the pick location and the geometry Edge or Face that was selected. The location does not have to be directly on the geometry, since the closest approach on the geometry to the location will be used.
+- `apex.geometry.defeature` — Remove features on the selected geometries.
+- `apex.geometry.defeatureByFeatureRange` — Remove features on the selected geometries.
+- `apex.geometry.defeatureCustomFeature` — this method finds all features in the target bodiy list, and returns them in a list of lists.
+- `apex.geometry.defeatureTopology` — Remove features on the selected geometries.
+- `apex.post.deleteColorMap` — Delete a ColorMap.
+- `apex.deleteCustomUnitSystem` — delete custom unit system.
+- `apex.deleteEntities` — Deletes multiple objects in the input target.
+- `apex.geometry.deletePairIncrementalMidSurface` — delete pairs
+- `apex.post.deleteStatePlot` — Delete StatePlot.
+- `apex.disableParasolidCache` — Disables the Parasolid cache capability of Apex. This can be useful to improve the performance of script execution.
+- `apex.disableRecoveryFileRecording` — Disables the recovery file recording capability of Apex. This can be useful to improve the performance of script execution.
+- `apex.disableShowOutput` — disable show output dialog.
+- `apex.disableUndoRedo` — Disables the Undo/Redo capability of Apex. This can be useful to improve the performance of script execution.
+- `apex.session.display2DSpans` — ODM control for the display of 2D Spans.
+- `apex.session.display3DSpans` — ODM control for the display of 3D Spans.
+- `apex.session.displayConnectionMarkers` — ODM control for the display of Connection Markers.
+- `apex.display.displayCutViews` — causes displaying model cut by one plane or several planes.
+- `apex.display.displayExplodedView` — ODM control for the display of exploded view.
+- `apex.session.displayInteractionMarkers` — ODM control for the display of Interaction Markers.
+- `apex.session.displayLoadsAndBCMarkers` — ODM control for the display of Loads And BC Markers.
+- `apex.session.displayMeshCracks` — ODM control for the display of Mesh Cracks.
+- `apex.session.displayMeshTopologyEdges` — ODM control for the display of Mesh Topology Edges.
+- `apex.session.displayNodeMarkerSize` — ODM control for the display size of Node Markers.
+- `apex.geometry.displayRenderStyle` — Model Browser control for render style display in the model.
+- `apex.session.displaySensorMarkers` — ODM control for the display of Sensor Markers.
+- `apex.session.displayShellElementCoordinateSystems` — ODM control for the display of Shell Element Coordinate Systems.
+- `apex.session.displayShellNormalDualColors` — ODM control for the display of Shell Normal Dual Colors.
+- `apex.session.displayShellNormalVectors` — ODM control for the display of Shell Normal Vectors.
+- `apex.session.displayShellThickness` — ODM control for the display of Shell Thickness.
+- `apex.session.displayStatusMessage` — Displays the text provided in the input argument "message" in the application status bar.
+- `apex.session.displaySuppressedEntities` — ODM control for the display of Suppressed Entities.
+- `apex.display.displayText` — DEPRECATED: In releases of Apex prior to Iberian Lynx this argument was of type apex.construct.Point3D. In the Iberian Lynx release the argument type has been changed to apex.ILocation. For the Iberian Lynx release, users may continue to pass Point3D objects however this capability may be deprecated in a future release therefore users are advised to transition their code to use apex.ILocation as quickly as possible to avoid future problems. Displays text on the graphics view at the specified location. The graphics text will rotate and translate with the model but will remain front facing.
+- `apex.session.displayTopologyLines` — ODM control for the display of Topology Lines.
+- `apex.geometry.dragEdge` — drag edges
+- `apex.geometry.dragVertex` — DEPRECATED: In releases of Apex prior to Iberian Lynx this argument was of type apex.construct.Point3D. In the Iberian Lynx release the argument type has been changed to apex.ILocation. For the Iberian Lynx release, users may continue to pass Point3D objects however this capability may be deprecated in a future release therefore users are advised to transition their code to use apex.ILocation as quickly as possible to avoid future problems. drag vertex.
+- `apex.geometry.edgeCollection` — This function has been deprecated and we intend to remove it in the next Apex release. Instead use the standard constuctor apex.geometry.EdgeCollection().
+- `apex.geometry.editIncrementalMidSurfaceMethod` — modify the incremental midsurface method
+- `apex.geometry.editPairIncrementalMidSurface` — create or modify a pair
+- `apex.construct.editSketchForProfile1D` — Edit the sketch for Profile1D.
+- `apex.attribute.enableAttributesLibraryUIRefresh`
+- `apex.display.enableGraphicRefresh` — enable/disable graphic refresh, Before using this scripting, must ensure that there are no transaction start. If transaction has been started, DDM will clean this transaction.
+- `apex.enableParasolidCache` — Enables the Parasolid cache capability of Apex. Parasolid cache is enabled by default, and can only be disabled by calling disableParasolidCache().
+- `apex.enableRecoveryFileRecording` — Enables the recovery file recording capability of Apex. Recovery file recording is enabled by default, and can only be disabled by calling disableRecoveryFileRecording().
+- `apex.enableShowOutput` — enable show output dialog.
+- `apex.enableUndoRedo` — Enables the Undo/Redo capability of Apex. Undo/Redo is enabled by default, and can only be disabled by calling disableUndoRedo().
+- `apex.endUndoIndent` — End indenting commands. Commands indented at the same level will undo/redo together.
+- `apex.geometry.enterIncrementalMidSurface` — enter Incremental MidSurface operation mode
+- `apex.entityCollection` — This function has been deprecated and we intend to remove it in the next Apex release. Instead use the standard constuctor apex.EntityCollection().
+- `apex.geometry.evaluateAngleBetweenCurves` — evaluateAngleBetweenCurves
+- `apex.geometry.evaluateAngleBetweenEdges` — evaluateAngleBetweenEdges
+- `apex.geometry.evaluateAngleBetweenFaces` — evaluateAngleBetweenFaces
+- `apex.construct.evaluateConstructionMarkerOrientation` — evaluates the default orientation of a construction marker from the input target entities and construction marker type.
+- `apex.compute.executeGenDes` — Executes the input Apex Generative Design Scenario on a Generative Design compute resource. The Generative Design compute resource must have been previously configured.
+- `apex.exitApp` — Under normal circumstances, closes the current model and shuts down the Apex application.
+- `apex.geometry.exitIncrementalMidSurface` — exit Incremental MidSurface operation mode
+- `apex.post.exitPostProcess` — Exits Post Processing.
+- `apex.geometry.extendToSurfaces` — Extend surfaces.
+- `apex.geometry.extractPairIncrementalMidSurface` — extract midsurface from identifed face pair
+- `apex.geometry.faceCollection` — This function has been deprecated and we intend to remove it in the next Apex release. Instead use the standard constuctor apex.geometry.FaceCollection().
+- `apex.geometry.fillerSurface` — create fillter surfaces
+- `apex.find` — Finds and returns a single Entity within the scope of the singleton Apex Project database using the input target. The input name must match at least the "name" of an entity that exists within the project. Note that name uniqueness is not required within Apex ( pathName uniqueness IS required) therefore this function is not guaranteed to return an object. If multiple objects with the same name , (but different pathNames ) are present within the Project, the method will raise an exception. If no entities exist within the Project that match the input name the method will raise an exception. In all other cases, the method will return the entity as an Entity.
+- `apex.geometry.findExteriorLoops` — Finds and returns the exterior EdgeLoops from the input Faces.
+- `apex.geometry.findFixSmallSurfaceAndCurveFeatures` — identify and optionally repairs small surface/curve features such as gaps, overhangs, and small edges that might cause problems.
+- `apex.geometry.findGeometryFaults` — Identify geometry faults in the model.
+- `apex.geometry.findInteriorLoops` — Finds an returns all interior EdgeLoops from the input set of Faces.
+- `apex.geometry.findManifoldRegions` — Finds and returns contiguous manifold regions from the input set of Faces and/or Surfaces.
+- `apex.geometry.findPairIncrementalMidSurface` — Finds and returns pairs of opposing faces in the input Solid. Multiple "Face Pairs" may be returned and each pair includes the faces for both sides of the pair - "Side 1" and "Side 2". Each Side of a Face Pair may include one or more geometry Faces. Face pairs will be identified and persisted when this function is first called on a Solid. Subsequent calls return the previously calculated face pairs, although these pairs may be modified from the originals using the interactive tools or associated scripting APIs.
+- `apex.geometry.geometryBodyCollection` — This function has been deprecated and we intend to remove it in the next Apex release. Instead use the standard constuctor apex.geometry.GeometryBodyCollection().
+- `apex.geometry.geometryFeatureCollection` — This function has been deprecated and we intend to remove it in the next Apex release. Instead use the standard constuctor apex.geometry.GeometryFeatureCollection().
+- `apex.geometry.geometrySimplify` — simplifies the input geometries
+- `apex.get` — Get a collection of Entities, specified by target list of key:value string dictionaries.
+- `apex.gendes.get` — Get a collection of Entities, specified by target list of key:value string dictionaries.
+- `apex.attribute.get1DDampers` — Get a collection of 1DDampers, specified by target of key:value string dictionaries.
+- `apex.attribute.get1DSpringDampers` — Get a collection of 1DSpringDampers, specified by target of key:value string dictionaries.
+- `apex.attribute.get1DSprings` — Get a collection of 1DSprings, specified by target of key:value string dictionaries.
+- `apex.getApplicationInfo` — Returns a str:str dictionary containing information about the current Application instance.
+- `apex.setting.getApplicationSettingsGeometry` — Returns the current Geometry Application Settings as an apex.geometry.ApplicationSettingsGeometry.
+- `apex.setting.getApplicationSettingsStudy` — returns the current study Application Settings
+- `apex.getApplicationUnitSystemLabel` — returns the 'asciilabel' of the current Application unit system.
+- `apex.attribute.getAppliedLoads`
+- `apex.getAssemblies` — Get a collection of Assemblies, specified by target list of key:value string dictionaries.
+- `apex.getAssembly` — Get a Assembly in a Model.
+- `apex.catalog.getAssignedMaterial` — Get an assigned apex.attribute.Material.
+- `apex.catalog.getAssignedMaterials` — Get all assigned materials in this model.
+- `apex.construct.getAxisEndPointLocationFromGroup` — returns the end point of the cylindrical axis of this Group if one can be determined. A cylindrical axis (and its start, end and mid points), is only guaranteed for geometry Faces based on analytic cylinders or circular arcs, however in many cases it is possible to determine an approximate cylindrical axis (and associated axis points) from a collection of Faces or Edges. If the input Group contains a single cylindrical Face or circular arc this method will return the end point of the axis of that Face or Edge as a Coordinate. If the Group references any other type of Entity or collection of Entities this method will attempt to calculate an approximate cylindrical axis from those entities and, if an axis can be determined, its end point will be returned as a Coordinate. If a cylindrical axis cannot be determined, the method will return a None type.
+- `apex.construct.getAxisEndPointLocationFromRegion` — returns the end point of the cylindrical axis of this Region if one can be determined. A cylindrical axis (and its start, end and mid points), is only guaranteed for geometry Faces based on analytic cylinders or circular arcs, however in many cases it is possible to determine an approximate cylindrical axis (and associated axis points) from a collection of Faces or Edges. If the input Region contains a single cylindrical Face or circular arc this method will return the end point of the axis of that Face or Edge as a Coordinate. If the Region references any other type of Entity or collection of Entities this method will attempt to calculate an approximate cylindrical axis from those entities and, if an axis can be determined, its end point will be returned as a Coordinate. If a cylindrical axis cannot be determined, the method will return a None type.
+- `apex.construct.getAxisMidPointLocationFromGroup` — returns the mid point of the cylindrical axis of this Group if one can be determined. A cylindrical axis (and its start, end and mid points), is only guaranteed for geometry Faces based on analytic cylinders or circular arcs, however in many cases it is possible to determine an approximate cylindrical axis (and associated axis points) from a collection of Faces or Edges. If the input Group contains a single cylindrical Face or circular arc this method will return the mid point of the axis of that Face or Edge as a Coordinate. If the Group references any other type of Entity or collection of Entities this method will attempt to calculate an approximate cylindrical axis from those entities and, if an axis can be identified, its mid point will be returned as a Coordinate. If a cylindrical axis cannot be determined, the method will return a None type.
+- `apex.construct.getAxisMidPointLocationFromRegion` — returns the mid point of the cylindrical axis of this Region if one can be determined. A cylindrical axis (and its start, end and mid points), is only guaranteed for geometry Faces based on analytic cylinders or circular arcs, however in many cases it is possible to determine an approximate cylindrical axis (and associated axis points) from a collection of Faces or Edges. If the input Region contains a single cylindrical Face or circular arc this method will return the mid point of the axis of that Face or Edge as a Coordinate. If the Region references any other type of Entity or collection of Entities this method will attempt to calculate an approximate cylindrical axis from those entities and, if an axis can be identified, its mid point will be returned as a Coordinate. If a cylindrical axis cannot be determined, the method will return a None type.
+- `apex.construct.getAxisStartPointLocationFromGroup` — returns the start point of the cylindrical axis of this Group if one can be determined. A cylindrical axis (and its start, end and mid points), is only guaranteed for geometry Faces based on analytic cylinders or circular arcs, however in many cases it is possible to determine an approximate cylindrical axis (and associated axis points) from a collection of Faces or Edges. If the input Group contains a single cylindrical Face or circular arc this method will return the start point of the axis of that Face or Edge as a Coordinate. If the Group references any other type of Entity or collection of Entities this method will attempt to calculate an approximate cylindrical axis from those entities and, if an axis can be determined, its start point will be returned as a Coordinate. If a cylindrical axis cannot be determined, the method will return a None type.
+- `apex.construct.getAxisStartPointLocationFromRegion` — returns the start point of the cylindrical axis of this Region if one can be determined. A cylindrical axis (and its start, end and mid points), is only guaranteed for geometry Faces based on analytic cylinders or circular arcs, however in many cases it is possible to determine an approximate cylindrical axis (and associated axis points) from a collection of Faces or Edges. If the input Region contains a single cylindrical Face or circular arc this method will return the start point of the axis of that Face or Edge as a Coordinate. If the Region references any other type of Entity or collection of Entities this method will attempt to calculate an approximate cylindrical axis from those entities and, if an axis can be determined, its start point will be returned as a Coordinate. If a cylindrical axis cannot be determined, the method will return a None type.
+- `apex.catalog.getBeamShape` — Retrieves a apex.attribute.BeamShape from the catalog using the input "name". If a apex.attribute.BeamShape with the input name does not exit the method will throw an exception.
+- `apex.catalog.getBeamShapeDictionary` — Get all apex.attribute.BeamShape objects in this Catalog.
+- `apex.getBeamSpan` — Retrieve a apex.attribute.BeamSpan from a Model using the apex.attribute.BeamSpan pathName.
+- `apex.attribute.getBeamSpan` — get an existing BeamSpan
+- `apex.attribute.getBeamSpans` — Get a collection of BeamSpans, specified by target of key:value string dictionaries.
+- `apex.attribute.getBolt3D` — Retrieves a Bolt3D using the input pathName.
+- `apex.attribute.getBolt3Ds` — Get a collection of Bolt3Ds, specified by target of key:value string dictionaries.
+- `apex.geometry.getBox` — Get a Box in a Model.
+- `apex.geometry.getBoxes` — Get a collection of Boxes, specified by target list of key:value string dictionaries.
+- `apex.catalog.getBushingProperties` — Returns a collection of all BushingRepProperties. If no BushingRepProperties objects exist, the collection will be empty.
+- `apex.catalog.getBushingProperty` — Retrieves a apex.attribute.BushingProperties from the catalog using the input "name". If a apex.attribute.BushingProperties with the input name does not exit the method will throw an exception.
+- `apex.catalog.getBushingPropertyDictionary` — A dictionary containing all apex.attribute.BushingProperties objects in the catalog. The dictionary key is a string type and represents the Name of the apex.attribute.BushingProperties The dictionary value is the apex.attribute.BushingProperties corresponding to the apex.attribute.BushingProperties.
+- `apex.attribute.getBushings` — Get a collection of Bushings, specified by target of key:value string dictionaries.
+- `apex.getByUserAttribute` — Retrieves Apex objects as an EntityCollection, based on their associated UserAttributes..
+- `apex.display.getCamera` — Returns a virtual camera from the input 3D graphics view. The camera settings will reflect the current setting of the camera in the view.
+- `apex.catalog.getCatalogElementProperty` — Returns the singleton ElementProperty catalog that contains all 2D and 3D element property objects from the Apex session.
+- `apex.catalog.getCatalogKeyResult` — Returns a KeyResult catalog that contains all keyresults.
+- `apex.catalog.getCatalogMaterial` — Returns the singleton material catalog from the Apex session.
+- `apex.catalog.getCatalogParameters` — Returns the parameters catalog from the Apex session.
+- `apex.catalog.getCatalogSystemCells` — Returns the SystemCells catalog from the Apex session.
+- `apex.geometry.getCells` — Get a collection of Cells, specified by target list of key:value string dictionaries.
+- `apex.chart.getChartPlotXY` — returns ChartPlotXY object by the input ChartPlotXY name.
+- `apex.license.getCheckoutStatus` — Retrieves the current CheckoutStatus of a Custom License Feature.
+- `apex.gendes.getClearanceRegion` — get an existing clearance region object.
+- `apex.instrument.getClearanceSensor` — retrieve the clearance sensor by name.
+- `apex.instrument.getClearanceSensors` — retrieve all clearance sensors in the model.
+- `apex.post.getColorMap` — Get a ColorMap using ColorMap name.
+- `apex.gendes.getCompoundInterface` — get an existing compound interface object.
+- `apex.attribute.getConnector` — Get a Connector THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Instead use getConnectorDiscrete.
+- `apex.attribute.getConnectorDiscrete` — Get a ConnectorDiscrete.
+- `apex.attribute.getConnectorDiscretes` — Get a collection of Connectors, specified by target of key:value string dictionaries.
+- `apex.attribute.getConnectors` — Get a collection of Connectors, specified by target of key:value string dictionaries THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Instead use getConnectorDiscretes.
+- `apex.environment.getConstraint` — Get a specified Constraint by name.
+- `apex.environment.getConstraintCombination` — Get a specified ConstraintCombination by name.
+- `apex.environment.getConstraintCombinations` — Get all ConstraintCombination objects in this environment.
+- `apex.environment.getConstraintDisplacement` — Get a specified ConstraintDisplacement or ConstraintDisplacementVariable by name.
+- `apex.environment.getConstraintDisplacements` — Get all ConstraintDisplacement and ConstraintDisplacementVariable objects in this environment.
+- `apex.environment.getConstraintExcludeAuto` — Get a specified ConstraintExcludeAuto or ConstraintExcludeAutoVariable by name.
+- `apex.environment.getConstraintExcludeAuto1` — Get a specified ConstraintExcludeAuto1 or ConstraintExcludeAuto1Variable by name.
+- `apex.environment.getConstraintExcludeAuto1s`
+- `apex.environment.getConstraintExcludeAutos`
+- `apex.environment.getConstraintSinglePoint` — Get a specified ConstraintSinglePoint or ConstraintSinglePointVariable by name.
+- `apex.environment.getConstraintSinglePoints` — Get all ConstraintSinglePoint and ConstraintSinglePointVariable objects in this environment.
+- `apex.environment.getConstraints` — Get all Constraints in this environment.
+- `apex.attribute.getContactBodies` — Get a collection of contact bodies from the whole model.
+- `apex.attribute.getContactBody` — Retrieves a contact body using the input name.
+- `apex.attribute.getContactTable` — Retrieves a contact table using the input pathName.
+- `apex.attribute.getContactTables` — Get all ContactTable.
+- `apex.getCoordinateSystem` — Get a CoordinateSystem in a Model.
+- `apex.getCoordinateSystemById` — Get a CoordinateSystem in a Model.
+- `apex.getCoordinateSystems` — Get CoordinateSystem objects in a Model.
+- `apex.chart.getCurrentChartPlotXY` — returns current ChartPlotXY object.
+- `apex.getCurrentProjectFolderName` — Returns the name of the folder that contains the current Apex project.
+- `apex.getCurrentProjectFolderPath` — Returns the fully qualified path to the folder that contains the current Apex project.
+- `apex.selection.getCurrentSelection` — Returns the contents of the current selection list.
+- `apex.post.getCurrentStatePlot` — get current StatePlot.
+- `apex.getCurve` — Get a Curve in a Model.
+- `apex.geometry.getCurve` — Get a Curve in a Model.
+- `apex.getCurveMesh` — Get a apex.mesh.CurveMesh in a Model.
+- `apex.mesh.getCurveMeshes` — Get a collection of CurveMeshes, specified by list of key:value string dictionaries.
+- `apex.geometry.getCurves` — Get a collection of Curves, specified by target list of key:value string dictionaries.
+- `apex.display.getCutView` — Return a cut view by specifying the name. Will return the current cut view if omit.
+- `apex.geometry.getCylinder` — Get a Cylinder in a Model.
+- `apex.geometry.getCylinders` — Get a collection of Cylinders, specified by target list of key:value string dictionaries.
+- `apex.construct.getCylindricalAxisFromGroup` — returns the cylindrical axis of this Group if one can be determined. A cylindrical axis (and its start, end and mid points), is only guaranteed for geometry Faces based on analytic cylinders or circular arcs, however in many cases it is possible to determine an approximate cylindrical axis (and associated axis points) from a collection of Faces or Edges. If the input Group contains a single cylindrical Face or circular arc this method will return the cylindrical axis of that Face or Edge as a Vector3D. If the Group references any other type of Entity or collection of Entities this method will attempt to calculate an approximate cylindrical axis from those entities and, if an axis can be identified, it will be returned as a Vector3D. If a cylindrical axis cannot be determined, the method will return a None type.
+- `apex.construct.getCylindricalAxisFromRegion` — returns the cylindrical axis of this Region if one can be determined. A cylindrical axis (and its start, end and mid points), is only guaranteed for geometry Faces based on analytic cylinders or circular arcs, however in many cases it is possible to determine an approximate cylindrical axis (and associated axis points) from a collection of Faces or Edges. If the input Region contains a single cylindrical Face or circular arc this method will return the cylindrical axis of that Face or Edge as a Vector3D. If the Region references any other type of Entity or collection of Entities this method will attempt to calculate an approximate cylindrical axis from those entities and, if an axis can be identified, it will be returned as a Vector3D. If a cylindrical axis cannot be determined, the method will return a None type.
+- `apex.catalog.getDAMPING`
+- `apex.catalog.getDAMPINGs`
+- `apex.catalog.getDamper1DProperties` — Returns a collection of all Damper1DRepProperties. If no Damper1DRepProperties objects exist, the collection will be empty.
+- `apex.catalog.getDamper1DProperty` — Retrieves a apex.attribute.Damper1DProperties from the catalog using the input "name". If a apex.attribute.Damper1DProperties with the input name does not exit the method will throw an exception.
+- `apex.catalog.getDamper1DPropertyDictionary` — A dictionary containing all apex.attribute.Damper1DProperties objects in the catalog. The dictionary key is a string type and represents the Name of the apex.attribute.Damper1DProperties The dictionary value is the apex.attribute.Damper1DProperties corresponding to the apex.attribute.Damper1DProperties.
+- `apex.post.getDataSeriesOverSteps` — find DataSeriesOverSteps list by the input parameters of DataSeriesOverSteps
+- `apex.post.getDataSeriesTimeHistory` — Gets a DataSeriesTransient from XY Charting.
+- `apex.post.getDataSeriesVMTBeamSpan` — Query a DataSeriesVMTBeamSpan by the input target, event, quantity and derivation in the input chart.
+- `apex.post.getDataSeriesVMTSensorArray` — Query a DataSeriesVMTSensorArray by the input target, event, quantity and component in the input chart.
+- `apex.getDatumPlane` — Get a DatumPlane in the current session using the pathName of DatumPlane.
+- `apex.gendes.getDesignSpace` — Get a DesignSpace in a model.
+- `apex.getDesignVariable` — Retrieves a design variable by using the input pathName.
+- `apex.getDesignVariables` — return all design variables in the model.
+- `apex.attribute.getDiscreteFEMField` — Retrieves a discrete FEM field using the input path name.
+- `apex.attribute.getDiscreteFEMFields` — Get a collection of discrete FEM field from the whole model.
+- `apex.attribute.getDiscreteTie` — get an existing DiscreteTie
+- `apex.attribute.getDiscreteTies` — Get a collection of DiscreteTies, specified by target of key:value string dictionaries.
+- `apex.environment.getDisplacementConstraint` — Get a new DisplacementConstraint in this environment. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: getConstraintDisplacement().
+- `apex.environment.getDisplacementConstraints` — Get all DisplacementConstraints in this environment. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: getConstraintDisplacements().
+- `apex.mesh.getDuplicatedSubMeshes` — Renumber elements or nodes id in target parts or assembles By Offset Id with different options.
+- `apex.catalog.getEIGB`
+- `apex.catalog.getEIGBs`
+- `apex.catalog.getEIGR`
+- `apex.catalog.getEIGRL`
+- `apex.catalog.getEIGRLs`
+- `apex.catalog.getEIGRs`
+- `apex.geometry.getEdges` — Get a collection of Edges, specified by target list of key:value string dictionaries.
+- `apex.attribute.getElementBeamSpan`
+- `apex.attribute.getElementFields`
+- `apex.attribute.getElementMaterial`
+- `apex.attribute.getElementProperty2D`
+- `apex.attribute.getElementProperty3D`
+- `apex.attribute.getElementShellBehavior` — This Function is no longer supported in Apex. Refer to apex.attribute.getElementProperty2D to determine how this capability is now supported.
+- `apex.attribute.getElementShellSection` — This Function is no longer supported in Apex. Refer to apex.attribute.getElementFields to determine how this capability is now supported.
+- `apex.getElements` — Get a apex.mesh.ElementCollection in multi Part.
+- `apex.mesh.getElements` — Get a collection of Element, specified by list of key:value string dictionaries.
+- `apex.geometry.getEllipsoid` — Get a Ellipsoid in a Model.
+- `apex.geometry.getEllipsoids` — Get a collection of Ellipsoids, specified by target list of key:value string dictionaries.
+- `apex.environment.getEnforcedMotion` — Get a EnforcedMotion in this environment. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: getLoadEnforcedMotionTotal().
+- `apex.getEntities` — Get a collection of named Entities.
+- `apex.display.getExternalVTKWidget` — a virtual camera for 3D graphics views. It provides methods to position and orient the view point and focal point. Convenience methods for moving about the focal point also are provided.
+- `apex.geometry.getFaces` — Get a collection of Faces, specified by target list of key:value string dictionaries.
+- `apex.getFacetedCurve` — Get a FacetedCurve in a Model.
+- `apex.geometry.getFacetedCurve` — Get a Faceted Curve in a Model.
+- `apex.geometry.getFacetedCurves` — Get a collection of Faceted Curves, specified by target list of key:value string dictionaries.
+- `apex.getFacetedSolid` — Get a Faceted Solid in a Model.
+- `apex.geometry.getFacetedSolid` — Get a Faceted Solid in a Model.
+- `apex.geometry.getFacetedSolids` — Get a collection of Faceted Solids, specified by target list of key:value string dictionaries.
+- `apex.getFacetedSurface` — Get a Faceted Surface in a Model.
+- `apex.geometry.getFacetedSurface` — Get a FacetedSurface in a Model.
+- `apex.geometry.getFacetedSurfaces` — Get a collection of Faceted Surfaces, specified by target list of key:value string dictionaries.
+- `apex.catalog.getFastenerProperties` — Returns a collection of all FastenerRepProperties. If no FastenerRepProperties objects exist, the collection will be empty.
+- `apex.catalog.getFastenerProperty` — Retrieves a apex.attribute.FastenerProperties from the catalog using the input "name". If a apex.attribute.FastenerProperties with the input name does not exit the method will throw an exception.
+- `apex.catalog.getFastenerPropertyDictionary` — A dictionary containing all apex.attribute.FastenerProperties objects in the catalog. The dictionary key is a string type and represents the Name of the apex.attribute.FastenerProperties The dictionary value is the apex.attribute.FastenerProperties corresponding to the apex.attribute.FastenerProperties.
+- `apex.attribute.getFasteners` — Get a collection of Fasteners, specified by target of key:value string dictionaries.
+- `apex.attribute.getFieldDictionary` — Get all apex.attribute.DiscreteFEMField objects in this Catalog.
+- `apex.attribute.getFlexibleLinks` — Get a collection of FlexibleLinks, specified by target of key:value string dictionaries.
+- `apex.environment.getForceMoment` — Get a ForceMoment in this environment. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: getLoadForceComponent(), getLoadMomentComponent().
+- `apex.gendes.getGDConfiguration` — Get a GDConfiguration by name.
+- `apex.attribute.getGaps` — Get a collection of Gaps, specified by target of key:value string dictionaries.
+- `apex.compute.getGenDesComputeEnvironment`
+- `apex.geometry.getGeometryBodies` — Get a collection of GeometryBodies, specified by target list of key:value string dictionaries.
+- `apex.getGeometryBody` — Get a GeometryBody in a Model.
+- `apex.geometry.getGeometryBody` — Get a GeometryBody in a Model.
+- `apex.environment.getGravity` — Get a new Gravity in this environment.
+- `apex.environment.getGravityLoads` — Get all Gravity loads in this environment.
+- `apex.getGroup` — Retrieve a Group from the current Model using its pathName.
+- `apex.catalog.getHYBDAMP`
+- `apex.catalog.getHYBDAMPs`
+- `apex.getHexMesh` — Get a apex.mesh.HexMesh in a Model.
+- `apex.mesh.getHexMeshes` — Get a collection of HexMeshes, specified by list of key:value string dictionaries.
+- `apex.catalog.getITER`
+- `apex.catalog.getITERs`
+- `apex.environment.getInitialCondition` — Get a specified InitialCondition by name.
+- `apex.environment.getInitialConditions` — Get all InitialConditions in this environment. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: getInitialTemperatureNodals().
+- `apex.environment.getInitialDisplacementVelocities` — Get all InitialDisplacementVelocity and InitialDisplacementVelocityVariable objects in this environment.
+- `apex.environment.getInitialDisplacementVelocity` — Get a specified InitialDisplacementVelocity or InitialDisplacementVelocity by name.
+- `apex.environment.getInitialStrain` — Get a specified InitialStrain or InitialStrainVariable by name.
+- `apex.environment.getInitialStrains` — Get all initialStrain and InitialStrainVariable objects in this environment.
+- `apex.environment.getInitialStress` — Get a specified InitialStress or InitialStressVariable by name.
+- `apex.environment.getInitialStresss`
+- `apex.environment.getInitialTemperatureDefault` — Get a specified InitialTemperatureDefault by name.
+- `apex.environment.getInitialTemperatureDefaults` — Get all InitialTemperatureDefault objects in this environment.
+- `apex.environment.getInitialTemperatureGradient2D` — Get a specified InitialTemperatureGradient2D or InitialTemperatureGradient2DVariable by name.
+- `apex.environment.getInitialTemperatureGradient2DHeat` — Get a specified InitialTemperatureGradient2DHeat or InitialTemperatureGradient2DHeatVariable by name.
+- `apex.environment.getInitialTemperatureGradient2DHeats` — Get all InitialTemperatureGradient2DHeat and InitialTemperatureGradient2DHeatVariable objects in this environment.
+- `apex.environment.getInitialTemperatureGradient2Ds` — Get all InitialTemperatureGradient2D and InitialTemperatureGradient2DVariable objects in this environment.
+- `apex.environment.getInitialTemperatureGradientBeam2`
+- `apex.environment.getInitialTemperatureGradientBeam2s`
+- `apex.environment.getInitialTemperatureGradientBeam3`
+- `apex.environment.getInitialTemperatureGradientBeam3s`
+- `apex.environment.getInitialTemperatureNodal` — Get a specified InitialTemperatureNodal or InitialTemperatureNodalVariable by name.
+- `apex.environment.getInitialTemperatureNodals` — Get all InitialTemperatureNodal and InitialTemperatureNodalVariable objects in this environment.
+- `apex.setting.getIntegratedSolverExecutionSettings` — Retrieves the IntegratedSolverExecutionSettings from the project.
+- `apex.attribute.getInteraction` — Get an Interaction.
+- `apex.attribute.getInteractions` — Get a collection of Interactions, specified by target of key:value string dictionaries.
+- `apex.attribute.getInterfacePoint` — Get an InterfacePoint.
+- `apex.attribute.getJoint` — get an existing Joint
+- `apex.attribute.getJoints` — Get a collection of Joints, specified by target of key:value string dictionaries.
+- `apex.attribute.getLayeredPanel` — get an existing LayeredPanel
+- `apex.attribute.getLayeredPanels` — Get a collection of LayeredPanels, specified by target of key:value string dictionaries.
+- `apex.environment.getLoad` — Get a specified Load by name.
+- `apex.environment.getLoadAccelerationNodal` — Get a specified LoadAccelerationNodal or LoadAccelerationNodalVariable by name.
+- `apex.environment.getLoadAccelerationNodals` — Get all LoadAccelerationNodal and LoadAccelerationNodalVariable objects in this environment.
+- `apex.environment.getLoadAccelerationSpatial` — Get a specified LoadAccelerationSpatial by name.
+- `apex.environment.getLoadAccelerationSpatials` — Get all LoadAccelerationSpatial objects in this environment.
+- `apex.environment.getLoadAreaFactor` — Get a specified LoadAreaFactor or LoadAreaFactorVariable by name.
+- `apex.environment.getLoadAreaFactors` — Get all LoadAreaFactor objects in this environment.
+- `apex.environment.getLoadCombinationDynamic` — Get a specified LoadCombinationDynamic by name.
+- `apex.environment.getLoadCombinationDynamics` — Get all LoadCombinationDynamic objects in this environment.
+- `apex.environment.getLoadCombinationStatic` — Get a specified LoadCombinationStatic by name.
+- `apex.environment.getLoadCombinationStatics` — Get all LoadCombinationStatic objects in this environment.
+- `apex.environment.getLoadDeformationAxial` — Get a specified LoadDeformationAxial or LoadDeformationAxialVariable by name.
+- `apex.environment.getLoadDeformationAxials` — Get all LoadDeformationAxial and LoadDeformationAxialVariable objects in this environment.
+- `apex.environment.getLoadDistributed` — Get a specified LoadDistributed or LoadDistributedVariable by name.
+- `apex.environment.getLoadDistributedBeam2` — Get a specified LoadDistributedBeam2 or LoadDistributedBeam2Variable by name.
+- `apex.environment.getLoadDistributedBeam2s` — Get all LoadDistributedBeam2 and LoadDistributedBeam2Variable objects in this environment.
+- `apex.environment.getLoadDistributedBeam3` — Get a specified LoadDistributedBeam3 or LoadDistributedBeam3Variable by name.
+- `apex.environment.getLoadDistributedBeam3s` — Get all LoadDistributedBeam3 and LoadDistributedBeam3Variable in this environment.
+- `apex.environment.getLoadDistributeds`
+- `apex.environment.getLoadDynamicAcoustic` — Get a specified LoadDynamicAcoustic by name.
+- `apex.environment.getLoadDynamicAcoustics` — Get all LoadDynamicAcoustic objects in this environment.
+- `apex.environment.getLoadDynamicFrequency1` — Get a specified LoadDynamicFrequency1 by name.
+- `apex.environment.getLoadDynamicFrequency1s` — Get all LoadDynamicFrequency1 objects in this environment.
+- `apex.environment.getLoadDynamicFrequency2` — Get a specified LoadDynamicFrequency2 by name.
+- `apex.environment.getLoadDynamicFrequency2s` — Get all LoadDynamicFrequency2 objects in this environment.
+- `apex.environment.getLoadDynamicTimeAnalytical` — Get a specified LoadDynamicTimeAnalytical by name.
+- `apex.environment.getLoadDynamicTimeAnalyticals` — Get all LoadDynamicTimeAnalytical objects in this environment.
+- `apex.environment.getLoadDynamicTimeTabular` — Get a specified LoadDynamicTimeTabular by name.
+- `apex.environment.getLoadDynamicTimeTabulars` — Get all LoadDynamicTimeTabular objects in this environment.
+- `apex.environment.getLoadEnforcedMotionRelative` — Get a specified LoadEnforcedMotionRelative or LoadEnforcedMotionRelativeVariable by name.
+- `apex.environment.getLoadEnforcedMotionRelatives` — Get all LoadEnforcedMotionRelative objects in this environment.
+- `apex.environment.getLoadEnforcedMotionTotal` — Get a specified LoadEnforcedMotionTotal or LoadEnforcedMotionTotalVariable by name.
+- `apex.environment.getLoadEnforcedMotionTotals` — Get all LoadEnforcedMotionTotal objects in this environment.
+- `apex.environment.getLoadForceComponent` — Get a specified LoadForceComponent or LoadForceComponentVariable by name.
+- `apex.environment.getLoadForceComponents` — Get all LoadForceComponent objects in this environment.
+- `apex.environment.getLoadForceFollowerNormal` — Get a specified LoadForceFollowerNormal or LoadForceFollowerNormalVariable by name.
+- `apex.environment.getLoadForceFollowerNormals`
+- `apex.environment.getLoadForceFollowerVector` — Get a specified LoadForceFollowerVector or LoadForceFollowerVectorVariable by name.
+- `apex.environment.getLoadForceFollowerVectors` — Get all LoadForceFollowerVector and LoadForceFollowerVectorVariable objects in this environment.
+- `apex.environment.getLoadForceRotational` — Get a specified LoadForceRotational by name.
+- `apex.environment.getLoadForceRotationals` — Get all LoadForceRotational objects in this environment.
+- `apex.environment.getLoadLug` — Get a LoadLug in this environment.
+- `apex.environment.getLoadLugs` — Get all LoadLugs in this environment.
+- `apex.environment.getLoadMomentComponent` — Get a specified LoadMomentComponent or LoadMomentComponentVariable by name.
+- `apex.environment.getLoadMomentComponents` — Get all LoadMomentComponent and LoadMomentComponentVariable objects in this environment.
+- `apex.environment.getLoadMomentFollowerNormal` — Get a specified LoadMomentFollowerNormal or LoadMomentFollowerNormalVariable by name.
+- `apex.environment.getLoadMomentFollowerNormals` — Get all LoadMomentNormal and LoadMomentFollowerNormalVariable objects in this environment.
+- `apex.environment.getLoadMomentFollowerVector` — Get a specified LoadMomentFollowerVector or LoadMomentFollowerVectorVariable by name.
+- `apex.environment.getLoadMomentFollowerVectors` — Get all LoadMomentFollowerVector and LoadMomentFollowerVectorVariable objects in this environment.
+- `apex.environment.getLoadPhaseLead` — Get a specified LoadPhaseLead or LoadPhaseLeadVariable by name.
+- `apex.environment.getLoadPhaseLeads` — Get all LoadPhaseLead and LoadPhaseLeadVariable objects in this environment.
+- `apex.environment.getLoadPressure` — Return a PressureLoad in this environment. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: getPressure().
+- `apex.environment.getLoadPressure2D` — Get a specified LoadPressure2D or LoadPressure2DVariable by name.
+- `apex.environment.getLoadPressure2Ds` — Get all LoadPressure2D and LoadPressure2DVariable objects in this environment.
+- `apex.environment.getLoadPressureArea` — Get a specified LoadPressureArea and LoadPressureAreaVariable by name.
+- `apex.environment.getLoadPressureAreas` — Get all LoadPressureArea and LoadPressureAreaVariable objects in this environment.
+- `apex.environment.getLoadPressures` — get all LoadPressures in this environment. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: getPressures().
+- `apex.environment.getLoadTemperature` — Get a LoadTemperature in this environment. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: getLoadTemperatureNodal().
+- `apex.environment.getLoadTemperatureDefault` — Get a specified LoadTemperatureDefault by name.
+- `apex.environment.getLoadTemperatureDefaults` — Get all LoadTemperatureDefault objects in this environment.
+- `apex.environment.getLoadTemperatureGradient2D` — Get a specified LoadTemperatureGradient2D or LoadTemperatureGradient2DVariable by name.
+- `apex.environment.getLoadTemperatureGradient2DHeat` — Get a specified LoadTemperatureGradient2DHeat or LoadTemperatureGradient2DHeatVariable by name.
+- `apex.environment.getLoadTemperatureGradient2DHeats` — Get all LoadTemperatureGradient2DHeat and LoadTemperatureGradient2DHeatVariable objects in this environment.
+- `apex.environment.getLoadTemperatureGradient2Ds` — Get all LoadTemperatureGradient2D and LoadTemperatureGradient2DVariable objects in this environment.
+- `apex.environment.getLoadTemperatureGradientBeam2` — Get a specified LoadTemperatureGradientBeam2 or LoadTemperatureGradientBeam2Variable by name.
+- `apex.environment.getLoadTemperatureGradientBeam2s` — Get all LoadTemperatureGradientBeam2 and LoadTemperatureGradientBeam2Variable objects in the environment.
+- `apex.environment.getLoadTemperatureGradientBeam3` — Get a specified LoadTemperatureGradientBeam3 or LoadTemperatureGradientBeam3Variable by name.
+- `apex.environment.getLoadTemperatureGradientBeam3s` — Get all LoadTemperatureGradientBeam3 and LoadTemperatureGradientBeam3Variable objects in the environment.
+- `apex.environment.getLoadTemperatureNodal` — Get a specified LoadTemperatureNodal or LoadTemperatureNodalVariable by name.
+- `apex.environment.getLoadTemperatureNodals` — Get all TemperatureNodal and LoadTemperatureNodalVariable objects in this environment.
+- `apex.environment.getLoadTemperatures` — Get all LoadTemperatures in this environment. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: getLoadTemperatureNodals().
+- `apex.environment.getLoadTimeDelay` — Get a specified LoadTimeDelay or LoadTimeDelayVariable by name.
+- `apex.environment.getLoadTimeDelays` — Get all LoadTimeDelay and LoadTimeDelayVariable objects in this environment.
+- `apex.environment.getLoadTotal` — Get a specified LoadTotal by name.
+- `apex.environment.getLoadTotals` — Get all LoadTotal objects in this environment.
+- `apex.environment.getLoadTraction` — Get a LoadTraction in this environment. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: getLoadDistributed(), getLoadTotal().
+- `apex.environment.getLoadTractions` — Get all LoadTractions in this environment. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: getLoadDistributeds(), getLoadTotals().
+- `apex.environment.getLoads` — Get all Loads in this environment.
+- `apex.catalog.getMaterial` — Get a new apex.attribute.Material in this Catalog.
+- `apex.catalog.getMaterialByID` — User specify an id input and it will return the material object.
+- `apex.catalog.getMaterialDictionary` — Get all apex.attribute.Material objects in this Catalog.
+- `apex.catalog.getMaterialSheet` — Retrieves a MaterialSheet from the material catalog using the input MaterialSheet pathName.
+- `apex.catalog.getMaterialSheetStack` — Retrieves a MaterialSheetStack from the material catalog using the input MaterialSheetStack pathName.
+- `apex.catalog.getMaterials` — Returns a collection of all Materials in the catalog, specified by target of key:value string dictionaries If no Material objects exist, the collection will be empty.
+- `apex.catalog.getMaterialsBy2DProperty` — This API will return a list of material objects corresponding to the MID1 associated with the assigned 2D element property in the current apex DB.
+- `apex.getMesh` — Get a apex.mesh.MeshBody in a Model.
+- `apex.mesh.getMesh` — Get a MeshBody in a Model.
+- `apex.attribute.getMeshDependentTie` — Get a getMeshDependentTie.
+- `apex.attribute.getMeshDependentTieByFullName` — Get a getMeshDependentTieByFullName.
+- `apex.attribute.getMeshDependentTies` — Get a collection of MeshDependentTies, specified by target of key:value string dictionaries.
+- `apex.mesh.getMeshes` — Get a collection of MeshBodies, specified by list of key:value string dictionaries.
+- `apex.getModelSetNastran` — gets a ModelSetNastran from this Model using the ID provided in the argument The ModelSetNastran is returned as an instance of the actual type of the Set and not as the base class ModelSetNastran type
+- `apex.catalog.getNLSTEP`
+- `apex.catalog.getNLSTEPs`
+- `apex.attribute.getNSMCombination` — Get NSMCombination by name.
+- `apex.attribute.getNSMCombinations` — Get all NSMCombination.
+- `apex.attribute.getNodeConstraints`
+- `apex.attribute.getNodeTie` — get an existing NodeTie
+- `apex.attribute.getNodeTieByID` — get an existing NodeTie
+- `apex.attribute.getNodeTies` — Get a collection of NodeTies, specified by target of key:value string dictionaries.
+- `apex.getNodes` — DEPRECATED:
+- `apex.mesh.getNodes` — Get a collection of Nodes, specified by list of key:value string dictionaries.
+- `apex.mesh.getNodesByAnalysisSystem` — Retrieve a Node Collection from the target part/assembly/mesh body using analysis coordinate system referencing to node.
+- `apex.gendes.getNonDesignRegion` — get an existing NonDesignRegion
+- `apex.attribute.getNonstructuralMass` — Get a NonstructuralMass.
+- `apex.attribute.getNonstructuralMassDictionary` — Get all apex.attribute.NonstructuralMass objects in this Catalog.
+- `apex.attribute.getNonstructuralMasses` — Get a collection of NonstructuralMasses,.
+- `apex.getPart` — Get a Part in a Model.
+- `apex.getParts` — Get a collection of Parts, specified by target list of key:value string dictionaries.
+- `apex.getPoint` — Get a Point in a Model.
+- `apex.geometry.getPoint` — Get a Point in a Model.
+- `apex.attribute.getPointMass` — Get a PointMass.
+- `apex.attribute.getPointMasses` — Get a collection of PointMasses, specified by target of key:value string dictionaries.
+- `apex.getPointMesh` — Get a apex.mesh.PointMesh in a Model.
+- `apex.mesh.getPointMeshes` — Get a collection of PointMeshes, specified by list of key:value string dictionaries.
+- `apex.instrument.getPointSensor` — Get a PointSensor.
+- `apex.instrument.getPointSensors` — Get a collection of PointSensors, specified by target of key:value string dictionaries.
+- `apex.geometry.getPoints` — Get a collection of Points, specified by target list of key:value string dictionaries.
+- `apex.environment.getPreloadBolt` — Get a PreloadBolt in this environment.
+- `apex.environment.getPreloadBolts` — Get all PreloadBolts in this environment.
+- `apex.environment.getPressure` — Get a specified Pressure by name.
+- `apex.environment.getPressures` — Get all Pressure objects in this environment.
+- `apex.getPrimaryStudy` — find the entity in the model
+- `apex.getProfile1D` — Returns the Profile1D identified by the pathName argument. If the pathName does not exist the method will throw an exception.
+- `apex.catalog.getProfile1D_Dictionary` — Returns a dictionary containing all apex.construct.Profile1D objects in the catalog. The dictionary key is a string type and represents the Name of the apex.construct.Profile1D The dictionary value is the apex.construct.Profile1D corresponding to the Name.
+- `apex.catalog.getProfile1Ds` — Returns a cpllection of all Profile1Ds in this Catalog. If no apex.construct.Profile1D object exists, the collection will be empty.
+- `apex.catalog.getPropertiesElement2D` — Retrieves a apex.attribute.PropertiesElement2D from the catalog using the input name. If a PropertiesElement2D with the input specified name does not exist in the catalog the method will throw an exception.
+- `apex.catalog.getPropertiesElement2DDictionary` — A dictionary containing all apex.attribute.PropertiesElement2D objects in the catalog. The dictionary key is a string type and represents the Name of the apex.attribute.PropertiesElement2D. The dictionary value is the apex.attribute.PropertiesElement2D object corresponding to the Name.
+- `apex.catalog.getPropertiesElement2Ds` — Returns a collection of all PropertiesElement2Ds in the catalog If no apex.attribute.PropertiesElement2D objects exist and empty collection will be returned.
+- `apex.catalog.getPropertiesElement3D` — Retrieves a PropertiesElement3D object in the catalog by the name. If the name does not exist, the method will throw an exception.
+- `apex.catalog.getPropertiesElement3DDictionary` — A dictionary containing all apex.attribute.PropertiesElement3D objects in the catalog. The dictionary key is a string type and represents the Name of the apex.attribute.PropertiesElement3D. The dictionary value is the apex.attribute.PropertiesElement3D object corresponding to the Name.
+- `apex.catalog.getPropertiesElement3Ds` — Returns a collection of PropertiesElement3D objects in the catalog, specified by target of key:value string dictionaries. If no PropertiesElement3D objects exist, the collection will be empty.
+- `apex.catalog.getRANDPS`
+- `apex.catalog.getRANDPSs`
+- `apex.catalog.getRANDT1`
+- `apex.catalog.getRANDT1s`
+- `apex.catalog.getRCROSS`
+- `apex.catalog.getRCROSSs`
+- `apex.getRegion` — Retrieve a Region from the current Model using its pathName.
+- `apex.attribute.getRigidFace` — Retrieves a rigid face using the input pathName.
+- `apex.attribute.getRigidFaces` — Get a collection of rigid faces from the whole model.
+- `apex.attribute.getRigidLinks` — Get a collection of RigidLinks, specified by target of key:value string dictionaries.
+- `apex.setting.getScriptTriggers`
+- `apex.getScriptUnitSystemLabel` — returns the 'asciilabel' of the current "Scripting" unit system.
+- `apex.catalog.getSectionDictionary` — DEPRECATED: THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Get all apex.attribute.ShellSection objects in this Catalog.
+- `apex.catalog.getSections` — This Function is no longer supported in Apex. Refer to apex.attribute.getDiscreteFEMFields to determine how this capability is now supported.
+- `apex.attribute.getSensors` — Get a collection of Sensors, specified by target of key:value string dictionaries.
+- `apex.instrument.getSensors` — Get all sensors including X Section Sensor and Sensor Array.
+- `apex.catalog.getShellBehavior` — This Function is no longer supported in Apex. Refer to apex.catalog.getPropertiesElement2D to determine how this capability is now supported.
+- `apex.catalog.getShellBehavior_Dictionary` — This Function is no longer supported in Apex. Refer to apex.catalog.getPropertiesElement2Ds to determine how this capability is now supported.
+- `apex.catalog.getShellBehaviors` — This Function is no longer supported in Apex. Refer to apex.catalog.getPropertiesElement2Ds to determine how this capability is now supported.
+- `apex.catalog.getShellSection` — This Function is no longer supported in Apex. Refer to apex.attribute.getDiscreteFEMField to determine how this capability is now supported.
+- `apex.getSolid` — Get a Solid in a Model.
+- `apex.geometry.getSolid` — Get a Solid in a Model.
+- `apex.getSolidMesh` — Get a apex.mesh.SolidMesh in a Model.
+- `apex.mesh.getSolidMeshes` — Get a collection of SolidMeshes, specified by list of key:value string dictionaries.
+- `apex.geometry.getSolids` — Get a collection of Solids, specified by target list of key:value string dictionaries.
+- `apex.geometry.getSphere` — Get a Sphere in a Model.
+- `apex.geometry.getSpheres` — Get a collection of Spheres, specified by target list of key:value string dictionaries.
+- `apex.catalog.getSpring1DProperties` — Returns a collection of all Spring1DRepProperties. If no Spring1DRepProperties objects exist, the collection will be empty.
+- `apex.catalog.getSpring1DProperty` — Retrieves a apex.attribute.Spring1DProperties from the catalog using the input "name". If a apex.attribute.Spring1DProperties with the input name does not exit the method will throw an exception.
+- `apex.catalog.getSpring1DPropertyDictionary` — A dictionary containing all apex.attribute.Spring1DProperties objects in the catalog. The dictionary key is a string type and represents the Name of the apex.attribute.Spring1DProperties The dictionary value is the apex.attribute.Spring1DProperties corresponding to the apex.attribute.Spring1DProperties.
+- `apex.catalog.getSpringDamper1DProperties` — Returns a collection of all SpringDamper1DRepProperties. If no SpringDamper1DRepProperties objects exist, the collection will be empty.
+- `apex.catalog.getSpringDamper1DProperty` — Retrieves a apex.attribute.SpringDamper1DProperties from the catalog using the input "name". If a apex.attribute.SpringDamper1DProperties with the input name does not exit the method will throw an exception.
+- `apex.catalog.getSpringDamper1DPropertyDictionary` — A dictionary containing all apex.attribute.SpringDamper1DProperties objects in the catalog. The dictionary key is a string type and represents the Name of the apex.attribute.SpringDamper1DProperties The dictionary value is the apex.attribute.SpringDamper1DProperties corresponding to the apex.attribute.SpringDamper1DProperties.
+- `apex.post.getStatePlot` — returns an existed StatePlot object.
+- `apex.environment.getSupportFreeBodies` — Get all SupportFreeBody and SupportFreeBodyVariable objects in this environment.
+- `apex.environment.getSupportFreeBody` — Get a specified SupportFreeBody or SupportFreeBodyVariable by name.
+- `apex.environment.getSupportFreeBody1` — Get a specified SupportFreeBody1 or SupportFreeBody1Variable by name.
+- `apex.environment.getSupportFreeBody1s` — Get all SupportFreeBody1 and SupportFreeBody1Variable objects in this environment.
+- `apex.getSurface` — Get a Surface in a Model.
+- `apex.geometry.getSurface` — Get a Surface in a Model.
+- `apex.getSurfaceMesh` — Get a apex.mesh.SurfaceMesh in a Model.
+- `apex.mesh.getSurfaceMeshes` — Get a collection of SurfaceMeshes, specified by list of key:value string dictionaries.
+- `apex.geometry.getSurfaces` — Get a collection of Surfaces, specified by target list of key:value string dictionaries.
+- `apex.display.getSysFontFamilyList` — get the current system supports all font family.
+- `apex.attribute.getTABDMP1`
+- `apex.attribute.getTABDMP1s`
+- `apex.chart.getTABLED1`
+- `apex.chart.getTABLED1s`
+- `apex.chart.getTABLED2`
+- `apex.chart.getTABLED2s`
+- `apex.chart.getTABLED3`
+- `apex.chart.getTABLED3s`
+- `apex.chart.getTABLED4`
+- `apex.chart.getTABLED4s`
+- `apex.attribute.getTABRND1`
+- `apex.attribute.getTABRND1s`
+- `apex.catalog.getTSTEP`
+- `apex.catalog.getTSTEPs`
+- `apex.chart.getTable` — Get a specified Table by name.
+- `apex.chart.getTables`
+- `apex.chart.getTables` — Get all Tables.
+- `apex.environment.getTemperatureInitialCondition` — Get an InitialTemperature in this environment. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with the function: getInitialTemperatureNodal().
+- `apex.setting.getUndoRedoStackSize`
+- `apex.getUserAttributesNames` — Get a list of all custom attribute names contained in/under the specified entity.
+- `apex.getUserAttributesValues` — Get a collection of all user attribute associated with a user attribute names contained in/under the specified Apex entity.
+- `apex.geometry.getVertices` — Get a collection of Vertices, specified by target list of key:value string dictionaries.
+- `apex.instrument.getXSectionForceSensor` — Get a XSectionForceSensor.
+- `apex.instrument.getXSectionForceSensorArray` — Get a XSectionForceSensorArray.
+- `apex.instrument.getXSectionForceSensorArrays` — Get a collection of XSectionForceSensors, specified by target of key:value string dictionaries.
+- `apex.instrument.getXSectionForceSensors` — Get a collection of XSectionForceSensors, specified by target of key:value string dictionaries.
+- `apex.session.growShellMesh` — ODM control for the display of Grow Shell Meshes.
+- `apex.session.hideAll` — Sets the visibility status of all objects in the current scene to "Hidden".
+- `apex.display.hideRotationCenter` — hide the location of the rotation center on the input View3D.
+- `apex.hideUI` — Causes the application UI to be hidden.
+- `apex.iPhysicalCollection` — This function has been deprecated and we intend to remove it in the next Apex release. Instead use the standard constuctor apex.ILocationCollection().
+- `apex.geometry.identifyCustomFeature` — this method finds all features in the target bodiy list, and returns them in a list of lists.
+- `apex.geometry.identifyFeature` — Identify features on the input collection of bodies.
+- `apex.geometry.identifyFixSmallFeatures` — Finds and optionally repairs small geometry artifacts.
+- `apex.initialize`
+- `apex.geometry.intersectBoolean` — boolean intersect
+- `apex.display.isEnableGraphicRefresh` — query graphic refresh status.
+- `apex.isUIShown` — Check state of UI.
+- `apex.session.maskEntityTypes` — ODM control for the display of Vertices.
+- `apex.measureAngle` — Measures angle between 2 entities.
+- `apex.measureAngle3Locations` — Measures angle with 3 locations.
+- `apex.measureDiameter` — Measures diameter of an entity.
+- `apex.measureDistance` — Measures the shortest distance between a single source geometry object and multiple target geometry objects and returns one distance for each object in target as a List of floats. The distances in the List are ordered to reflect the order of entities in target The distances represent units of Length and must be interpreted using the units of Length from the active ScriptUnitSystem.
+- `apex.measureDistanceByComponents` — Measures the shortest distance between a single source geometry object and multiple target geometry objects and returns one dictionary for all objects in target, the dictionary contains 2 keys: distance and components, "distance" is a list of float, values in the List are ordered to reflect the order of entities in target, "components" is a list of lists (or call it a 2D array of x,y,z triplets), [[dx1,dy1,dz1], [dx2,dy2,dz2],[dx3,dy3,dz3]] The distances represent units of Length and must be interpreted using the units of Length from the active ScriptUnitSystem. For example: A user measures the distances by components for one entity to other two.
+- `apex.geometry.mergeBoolean` — boolean merge the entities
+- `apex.mesh.mergeNodes` — Merges nodes, deleting merged nodes.
+- `apex.geometry.mergePairIncrementalMidSurface` — merge pairs
+- `apex.mesh.meshBodyCollection` — This function has been deprecated and we intend to remove it in the next Apex release. Instead use the standard constuctor apex.mesh.MeshBodyCollection().
+- `apex.mesh.moveNodeAlongFace` — DEPRECATED: In releases of Apex prior to Iberian Lynx this argument was of type apex.construct.Point3D. In the Iberian Lynx release the argument type has been changed to apex.ILocation. For the Iberian Lynx release, users may continue to pass Point3D objects however this capability may be deprecated in a future release therefore users are advised to transition their code to use apex.ILocation as quickly as possible to avoid future problems. Moves a mesh body node along the surface or on mesh facets. The inputs are a single node, and a destination xyz location.
+- `apex.mesh.moveNodeNormalFace` — Moves a mesh body node in the normal direction possitive or negatively.
+- `apex.mesh.moveNodeToNode` — Moves a mesh body node To another node, and merges with that node if possible. This can collapse elements from quad to tria, or delete a tria if one if its edges are collapsed.
+- `apex.openModel` — Closes current model and opens the specified model.
+- `apex.partCollection` — This function has been deprecated and we intend to remove it in the next Apex release. Instead use the standard constuctor apex.PartCollection().
+- `apex.geometry.pointCollection` — This function has been deprecated and we intend to remove it in the next Apex release. Instead use the standard constuctor apex.geometry.PointCollection().
+- `apex.geometry.pushPull` — push/pull surfaces
+- `apex.geometry.pushPullUpto` — push/pull surfaces
+- `apex.redo` — if a command exists on redo stack, Redo it.
+- `apex.mesh.reduceTria` — Reduct triangle elements.
+- `apex.registerTerminateCallback` — register a terminate callback.
+- `apex.attribute.removeAnalysisSystem` — remove analysis coordinate system from target entities.
+- `apex.attribute.removeBodiesFromMeshDependentTie` — removes Geometry Bodies from a collection MeshDependentTies.
+- `apex.geometry.removeVertex` — removes existing vertex from an edge
+- `apex.display.render` — Notify the Gen to update the view after adding or updating some elements by scripting.
+- `apex.mesh.renumberByOffset` — Renumber entities by applying an offset value to the existing ID. Currently supports renumbering of Nodes, Elements and Coordinate Systems only.
+- `apex.mesh.renumberByStartId` — Renumber entities by supplying a starting ID.
+- `apex.reparent` — Changes the parent of multiple objects (Assembly, Part, geometry::GeometryBody, mesh::MeshBody, construct::DatumPlanes).
+- `apex.setting.restoreDefaults` — Restores all application settings to their factory default values.
+- `apex.display.restoreExternalVTKElements` — restore exernal vtk elements. the premise is that VTK renderers have not been cleared.
+- `apex.mesh.reverseElement` — reverses the orientation of the element by changing the node connectivity. Also reverses the associated geometry of elements are associated, and ALL other elements associated to the same geometry even if not in put list.
+- `apex.session.reverseEntityMask` — reverses the Entity Masking
+- `apex.mesh.reverseOrientShells` — tries to match guiding element orientation based on sheet orientation rules. Will also reverse any associated goemtry and ALL other elements associated to that geometry even if not in input list.
+- `apex.scriptRecordPause` — Pause recording Macro scripting commands.
+- `apex.scriptRecordResume` — Resume recording Macro scripting commands.
+- `apex.scriptRecordStart` — Begin recording Macro scripting commands into named file.
+- `apex.scriptRecordStop` — Stop recording Macro scripting commands.
+- `apex.scriptRun` — Executes the named python script, and optionally shows script output in popup dialog.
+- `apex.mesh.separateElements` — Separte elements. THIS FUNCTION IS DEPRECATED AND WILL BE REMOVED IN THE FUTURE RELEASE. Users should be working with separateElementByBody()
+- `apex.mesh.separateElementsByBody` — Separte elements.
+- `apex.setting.setApplicationSettingsGeometry` — Sets the current Geometry Application Settings using the input apex.setting.ApplicationSettingsGeometry.
+- `apex.setting.setApplicationSettingsStudy` — sets the current study Application Settings
+- `apex.setApplicationUnitSystem` — Sets the current unit system to the spcified one.
+- `apex.selection.setBoxPickingEnabled` — Enable/Disable the Box picking status to display box in 3d-View;.
+- `apex.gendes.setDesignTarget` — Set the design target in the Optimization. Note that in 2021 release, only part can be set as design target. In later release, we will support AssemblyRep as the design target.Get a DesignSpace in a model. For example: ~~~~~~~~~~~~~{.py} apex.gendes.setDesignTarget(pathName=r'MyModel/Assembly1/Part1') ~~~~~~~~~~~~~.
+- `apex.compute.setGenDesComputeEnvironment` — Sets the Generative Design Compute Environment to as default one.
+- `apex.setting.setIntegratedSolverExecutionSettings` — change the setting of IntegratedSolverExecutionSettings to the project.
+- `apex.compute.setNatranComputeEnvironment` — Sets the default Nastran Compute Environment.
+- `apex.selection.setRetainSelectionOrder` — set the order status for selection list, the default is order.
+- `apex.display.setRotationCenterAutomatic` — Causes the location of the rotation center used for graphical view manipulation for the input View3D to be calculated automatically based on the displayed object and their proximity.
+- `apex.display.setRotationCenterManual` — Causes the location of the rotation center used for graphical view manipulation for the input View3D to be fixed at the input rotationCenter location.
+- `apex.setScriptUnitSystem` — Sets the unit system that represents the "default" units that will be used when a Python script is executed. All data contained in the script that does not have specific units defined, will be assumed to be defined in this default systems and Apex will convert them appropriately during execution of the script. The script will use the active application unit system when not set in the sciprt.
+- `apex.setting.setUndoRedoStackSize`
+- `apex.session.showAll` — Sets the visibility status of all objects in the current scene to "Visible".
+- `apex.session.showReverse` — Reverses the visibility status of all objects in the current scene. Objects that have a vsiblity status of "Visible" are modified to "Hidden" and objects that have a visiblity status of "Hidden" are modified to "Visible".
+- `apex.display.showRotationCenter` — Show the location of the rotation center on the input View3D.
+- `apex.showUI` — Causes the application UI to be displayed.
+- `apex.geometry.solidCollection` — This function has been deprecated and we intend to remove it in the next Apex release. Instead use the standard constuctor apex.geometry.SolidCollection().
+- `apex.geometry.split` — Split Geometry Bodies and Topologies with Surfaces, Faces or DatumPlanes.
+- `apex.geometry.splitCurvesWithCurves` — Splits one or more target Curves/Edges with one or more splitter Curves/Edges by finding points on the target entities where the splitter entities intersect, or project along the target normal, onto the target.
+- `apex.geometry.splitCurvesWithPoints` — DEPRECATED: In releases of Apex prior to Iberian Lynx this argument was of type List Of apex.construct.Point3D. In the Iberian Lynx release the argument type has been changed to apex.ILocationCollection. For the Iberian Lynx release, users may continue to pass List Of Point3D objects however this capability may be deprecated in a future release therefore users are advised to transition their code to use apex.ILocationCollection as quickly as possible to avoid future problems. Splits one or more target Curves/Edges with one or more splitter Points/Vertices by finding points on the target entities where the splitter entities intersect the target entities.
+- `apex.geometry.splitCurvesWithSurfaces` — Splits one or more target Curves/Edges with one or more splitter Surfaces/Faces/DatumPlanes by finding points on the target entities where the splitter entities intersect the target entities.
+- `apex.mesh.splitElementByPattern` — Splits a collection of elements by specific pattern. Default is to split the elements by 2*2 cross pattern. Note that an element edge is needed to orient "N" side of target elements when nNumberElementEdges != mNumberElementEdges
+- `apex.mesh.splitElementOnCurve` — This splits a collection of elements.
+- `apex.mesh.splitElementOnPath` — DEPRECATED: In releases of Apex prior to Iberian Lynx this argument was of type List Of apex.construct.Point3D. In the Iberian Lynx release the argument type has been changed to apex.ILocationCollection. For the Iberian Lynx release, users may continue to pass List Of Point3D objects however this capability may be deprecated in a future release therefore users are advised to transition their code to use apex.ILocationCollection as quickly as possible to avoid future problems. Splits a collection of elements on a path defined by a list of locations.
+- `apex.geometry.splitEntityWithOffsetFaces` — Splits one or more target Solids, Surfaces, Curves, Cells, Faces or Edges using one or more "virtual" Faces defined by offsetting one or more "real" Geometry Faces.
+- `apex.geometry.splitOn3PointPlane` — DEPRECATED: In releases of Apex prior to Iberian Lynx this argument was of type List Of apex.construct.Point3D. In the Iberian Lynx release the argument type has been changed to apex.ILocationCollection. For the Iberian Lynx release, users may continue to pass List Of Point3D objects however this capability may be deprecated in a future release therefore users are advised to transition their code to use apex.ILocationCollection as quickly as possible to avoid future problems. split the body with a defined plane.
+- `apex.geometry.splitOnFeaturePlane` — DEPRECATED: In releases of Apex prior to Iberian Lynx this argument was of type apex.construct.Point3D. In the Iberian Lynx release the argument type has been changed to apex.ILocation. For the Iberian Lynx release, users may continue to pass Point3D objects however this capability may be deprecated in a future release therefore users are advised to transition their code to use apex.ILocation as quickly as possible to avoid future problems. boolean split on feature plane.
+- `apex.geometry.splitOnSurface` — split the enitty with a surface "DEPRECATED: THIS METHOD IS DEPRECATED AND WILL BE REMOVED IN A FUTURE RELEASE. It has been superseded by "apex.geometry.split()"
+- `apex.geometry.splitSurfacesWithCurves` — Splits one or more target Faces with one or more splitter Edges by finding the intersection or projected intersection of the splitter Edges with the target Faces. An option is provided to control splitting based on whether or not the projected intersection on the target entity is close to the splitter object (a true intersection) or further away (a projected intersection)
+- `apex.geometry.splitSurfacesWithPath` — DEPRECATED: In releases of Apex prior to Iberian Lynx this argument was of type List Of apex.construct.Point3D. In the Iberian Lynx release the argument type has been changed to apex.ILocationCollection. For the Iberian Lynx release, users may continue to pass List Of Point3D objects however this capability may be deprecated in a future release therefore users are advised to transition their code to use apex.ILocationCollection as quickly as possible to avoid future problems. Splits one or more target Surfaces/Faces with a path defined by an ordered series of two or more 3DPoints that lie on the target entities. An optional parameter is provided to control whether the path is interpreted by a spline fitted through the path points or as a polyline consisting of a series of connected straight line segments between the points.
+- `apex.geometry.splitSurfacesWithSurfaces` — Splits one or more target Surfaces/Faces with one or more splitter Surfaces/Faces/DatumPlanes by finding the intersection of the splitter Surfaces/faces/DatumPlanes with the target Surfaces/Faces.
+- `apex.geometry.splitWithPlane` — TODO Documentation.
+- `apex.geometry.stitchCurves` — Takes as input a list of Curves and stitch them together. It returns Collectoin of created or modified Curves.
+- `apex.geometry.stitchSurfaces` — stitch surfaces
+- `apex.display.stopMovie` — stop record and save the movie according with setting from captureMovie The method returns the fully path qualified name of the saved movie file.
+- `apex.geometry.subtractBoolean` — boolean subtract subtractingEntity from target
+- `apex.geometry.suppressOnly` — Suppress target if not suppressed.
+- `apex.geometry.suppressToggle` — Suppress or unsuppress entities.
+- `apex.geometry.surfaceCollection` — This function has been deprecated and we intend to remove it in the next Apex release. Instead use the standard constuctor apex.geometry.SurfaceCollection().
+- `apex.attribute.targetBeamSpan`
+- `apex.attribute.targetReferencedBy`
+- `apex.terminate`
+- `apex.transformMirror` — DEPRECATED: In releases of Apex prior to Iberian Lynx this argument was of type apex.construct.Point3D. In the Iberian Lynx release the argument type has been changed to apex.ILocation. For the Iberian Lynx release, users may continue to pass Point3D objects however this capability may be deprecated in a future release therefore users are advised to transition their code to use apex.ILocation as quickly as possible to avoid future problems.
+- `apex.transformRotate` — DEPRECATED: In releases of Apex prior to Iberian Lynx this argument was of type apex.construct.Point3D. In the Iberian Lynx release the argument type has been changed to apex.ILocation. For the Iberian Lynx release, users may continue to pass Point3D objects however this capability may be deprecated in a future release therefore users are advised to transition their code to use apex.ILocation as quickly as possible to avoid future problems. Rotate a target entity.
+- `apex.transformTranslate` — Translate a target entity.
+- `apex.attribute.unassign` — Unassigns PropertiesElement3D or PropertiesElement2D or Material from the target.
+- `apex.attribute.unassignPropertiesElement3D` — Unassigns PropertiesElement3D from the target. Note that if target is not provided, all PropertiesElement3Ds will be unassigned from all associated entities.
+- `apex.attribute.unassignPropertiesElement3Ds` — Unassigns one or more PropertiesElement3D from the model.
+- `apex.undo` — if a command exists on undo stack, Undo it.
+- `apex.geometry.unstitchCurves` — This function works similar to unstitchSurfaces, but for Curves instead. It takes as input a list of Edges or Curves. For each set of contiguously connected Edges from a single Body, it disconnects them into one new Curve. If a Curve is selected that is non-manifolded or a Generalbody, it converts it into a minimum set of regular Curve Bodies. If a selected Curve is already manifolded, no operation is performed.
+- `apex.geometry.unstitchSurfaces` — un-stitch surfaces
+- `apex.geometry.unsuppressOnly` — Unsuppress selected edges if they are suppressed.
+- `apex.attribute.updateFieldMidsurfaceFromFaces` — Updates/creates and returns one or more auto thickness fields associated with elements from a single meshed Surface using the input 'Top' and 'Bottom' FaceCollections Given a single meshed Face, a pair of collections of Faces representing the 'Top' and 'Bottom' boundaries of the shape that the field is intended to describe and some other controlling parameters - updates any existing auto thickness fields or creates New(fields,distributions of thickness and offsets) using the relative positions of the input meshed faces and 'Top' and 'Bottom' boundaries.
+- `apex.attribute.updateSectionMidsurfaceFromFaces` — This Function is no longer supported in Apex. Refer to apex.attribute.updateFieldMidsurfaceFromFaces to determine how this capability is now supported.
+- `apex.userAttributeCollection` — return a UserAttributeCollection, optionally initialized from a list of UserAttributes.

@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<configurations xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <tool>
+    <!-- Must match the Name used for this tool in group.xml. -->
+    <name>Example Tool</name>
+    <!-- 36x36 image, must exist in this tool folder's res/ directory. -->
+    <icon>exampleTool.png</icon>
+    <description>Mesh the picked bodies at a user-defined size</description>
+    <!-- ui_tool (has a panel) or batch_tool (runs a script directly). -->
+    <tooltype>ui_tool</tooltype>
+    <!-- File in src/. For ui_tool this is the UI file, NOT the worker. -->
+    <runfile>example_tool_ui.py</runfile>
+    <Version>1.0</Version>
+  </tool>
+</configurations>
