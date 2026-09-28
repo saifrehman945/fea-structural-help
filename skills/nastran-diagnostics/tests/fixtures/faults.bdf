@@ -1,0 +1,50 @@
+$ Seeded-fault fixture for tools/validate.py - every check should fire once.
+$ LENGTH MM
+$ MASS TONNE
+$ TIME S
+$ FORCE N
+SOL 101
+CEND
+TITLE = FAULTS FIXTURE
+SUBCASE 1
+  LOAD = 10
+  SPC = 1
+SUBCASE 2
+  LOAD = 99
+  SPC = 1
+BEGIN BULK
+PARAM   POST    -1
+$ ---- plate A: small field, mm-t-s steel
+GRID    1               0.      0.      0.
+GRID    2               1.      0.      0.
+GRID    3               2.      0.      0.
+GRID    4               0.      1.      0.
+GRID    5               1.      1.      0.
+GRID    6               2.      1.      0.
+GRID    7               0.      2.      0.
+GRID    8               1.      2.      0.
+GRID    9               2.      2.      0.
+$ duplicate grid id
+GRID    5               1.      1.      0.
+CQUAD4  1       1       1       2       5       4
+CQUAD4  2       1       2       3       6       5
+CQUAD4  3       1       4       5       8       7
+CQUAD4  4       1       5       6       9       8
+$ missing property
+CQUAD4  99      77      2       3       6       5
+PSHELL  1       1       1.      1
+MAT1    1       210000.         .3      7.85-9
+$ SPC set 1 in free field; grid 7 is also RBE2-dependent (conflict)
+SPC1,1,123456,1,4,7
+RBE2    300     8       123456  7
+$ lumped mass on a grid nothing else uses, and an unused grid
+GRID    500             5.      5.      5.
+CONM2   400     500             .001
+GRID    600             9.      9.      9.
+$ cylindrical system for the load direction
+CORD2C  5               0.      0.      0.      0.      0.      1.      +
++       1.      0.      0.
+FORCE   20      109     5       10.     1.      0.      0.
+LOAD    10      1.      2.      20
+INCLUDE 'faults_mesh.inc'
+ENDDATA

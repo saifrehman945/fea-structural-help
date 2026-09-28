@@ -1,0 +1,39 @@
+1                                                                         JUNE  1, 2026  MSC Nastran  1/ 1/26   PAGE     1
+                                              * *     Version 2025.1-test     * *
+0        N A S T R A N    E X E C U T I V E    C O N T R O L    E C H O
+     SOL 101
+     CEND
+1                                                                         JUNE  1, 2026  MSC Nastran  1/ 1/26   PAGE     2
+0                                        C A S E    C O N T R O L    E C H O
+                 COMMAND
+                 COUNT
+                  1      SUBCASE 1
+                  2        LOAD = 1
+                  3        SPC = 1
+                  4      BEGIN BULK
+1                                                                         JUNE  1, 2026  MSC Nastran  1/ 1/26   PAGE     3
+0                                                  S O R T E D   B U L K   D A T A   E C H O
+                 ENTRY
+                 COUNT        .   1  ..   2  ..   3  ..   4  ..   5  ..   6  ..   7  ..   8  ..   9  ..  10  .
+                    1-        CQUAD4  1       1       1       2       3       4
+                    2-        FORCE   1       3               10.     0.      0.      1.
+                    3-        GRID    1               0.      0.      0.
+                    4-        GRID    2               1.      0.      0.
+                    5-        GRID    3               1.      1.      0.
+                    6-        GRID    4               0.      1.      0.
+                    7-        MAT1    1       2.1+5           .3      7.85-9
+                    8-        PSHELL  1       1       1.      1
+                    9-        SPC1    1       123     1       2
+                              ENDDATA
+0 *** USER WARNING MESSAGE 4124 (IFPS)
+     THE SPCADD OR MPCADD UNION CONSISTS OF A SINGLE SET.
+ *** USER WARNING MESSAGE 4698 (DCMPD)
+     STATISTICS FOR DECOMPOSITION OF MATRIX KLL  .
+     THE FOLLOWING DEGREES OF FREEDOM HAVE FACTOR DIAGONAL RATIOS GREATER THAN
+ *** USER WARNING MESSAGE 4698 (DCMPD)
+     STATISTICS FOR DECOMPOSITION OF MATRIX KLL  .
+     THE FOLLOWING DEGREES OF FREEDOM HAVE FACTOR DIAGONAL RATIOS GREATER THAN
+ *** USER FATAL MESSAGE 9050 (SEKRRS)
+     RUN TERMINATED DUE TO EXCESSIVE PIVOT RATIOS IN MATRIX KLL. USER PARAMETER BAILOUT MAY BE USED TO CONTINUE THE RUN.
+ *** USER FATAL MESSAGE 9050 (SEKRRS)
+     RUN TERMINATED DUE TO EXCESSIVE PIVOT RATIOS IN MATRIX KLL. USER PARAMETER BAILOUT MAY BE USED TO CONTINUE THE RUN.

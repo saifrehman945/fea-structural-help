@@ -10,7 +10,7 @@ categories.
 | Build | `apex-docs` | how to do it in the Apex GUI |
 | Automate | `apex-scripting` | write and debug Apex Python and custom tools |
 | Solve | `nastran-reference` | what a deck keyword, field or solution sequence does |
-| Debug | `nastran-diagnostics` | what a message means, why the run failed |
+| Debug | `nastran-diagnostics` | what a message means, why the run failed, what is wrong with the deck |
 
 Skills are namespaced: `/fea-structural-help:apex-docs`, and so on.
 
@@ -96,6 +96,19 @@ The portal refuses sustained request bursts, reporting it as a DNS or
 connection-reset error rather than an HTTP 429. The builders retry with backoff;
 `--resume` picks up ranges that still failed.
 
+## Diagnosing a run
+
+`nastran-diagnostics` never reads a raw `.f06` or deck into the conversation.
+`tools/run_digest.py` streams the .f06/.f04/.log (and the deck, or the deck
+rebuilt from the f06 echo) into a digest of ~2-3k tokens and a queryable index.
+It then checks the deck for faults the solver reports late or not at all:
+unconstrained parts, load paths that exist only through glue, coarse glue
+secondaries, floating masses, coincident unmerged grids, missing references,
+mixed units and point loads standing in for inertia. Each finding names the
+`nastran-reference` entries and the `apex-docs` question that fix it. A 191 MB
+f06 of a 3.5M-DOF model digests in about 35 s. The tools are stdlib-only Python;
+scipy is used when present.
+
 ## Known limits
 
 - The raw documentation endpoint is undocumented and MSC Apex and Nastran are
@@ -103,5 +116,8 @@ connection-reset error rather than an HTTP 429. The builders retry with backoff;
   API reference keep working; live page prose does not.
 - The Apex archive the indexes were built from is a ~2021.4 snapshot, while the
   page text fetched is current. `apex-docs` flags the skew.
+- The deck checks trace contact only for BCONECT with BCSURF, BCBODY/BCBODY1
+  and BCTABL1. BGSET/BCTSET are reported but not traced; CWELD/CFAST don't join
+  parts. `skills/nastran-diagnostics/references/run-digest.md` lists every limit.
 - No element theory or solver theory exists in either corpus. That is what
   `fea-modelling-strategy` is for, and why it marks its reasoning.

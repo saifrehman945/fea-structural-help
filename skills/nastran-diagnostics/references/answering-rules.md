@@ -5,7 +5,7 @@ explanation of a message number sends someone rebuilding a model for the wrong
 reason. So this skill is strict about the line between what the message
 catalogue says and what you are inferring.
 
-## The two kinds of statement
+## The three kinds of statement
 
 **1. Documented.** The message text, and its `User information` / `User action`
 prose, exactly as published.
@@ -19,6 +19,18 @@ prose, exactly as published.
 
 > **Not found in the documentation — general engineering knowledge:** in an Apex
 > export this usually means two ASSIGN statements collided …
+
+**3. Computed.** A fact about *this* deck or run produced by the tools:
+a finding from `run_digest.py` / `deck_checks.py`, a query result, a figure
+read from the `.f06`. Cite the finding code or the query.
+
+> **From your deck (`UNCONSTRAINED_GROUP`):** part 2 (9 grids, PSHELL 2) has no
+> path to any SPC and carries LOAD 10.
+
+Computed facts are neither catalogue text nor guesswork, but they have limits
+(mass is an estimate, contact is traced only for some card families; see
+[run-digest.md](run-digest.md#limits)). State the limit when the answer leans
+on it. *Why* the deck ended up that way is still extrapolation.
 
 The catalogue tells you what a message means. It almost never tells you why your
 particular model produced it. **That second half is nearly always extrapolation,
@@ -49,6 +61,8 @@ in its place.
 | The number has several variants | which module's variant you are describing, and that others exist |
 | The number is not in the catalogue | plainly — numbers are sparse and some ranges are unpublished |
 | You are diagnosing the model, not the message | mark it as engineering reasoning |
+| A statement comes from the digest or a query | say so, and name the finding code |
+| The digest's conclusions are partial (missing INCLUDE, untraced contact) | say what was not checked |
 | The run's real problem is upstream of the message | say so — the first fatal is often a symptom |
 
 ## What never to do
@@ -62,17 +76,23 @@ in its place.
    is under-constrained, ill-conditioned, or simply mis-specified is a
    conclusion you reach, not something the catalogue says.
 4. Never write or debug Apex Python here — that is `apex-scripting`.
-5. Never explain a bulk data entry's fields from memory — that is
+5. Never explain a bulk data entry's fields from memory; that is
    `nastran-reference`, which has the QRG index.
+6. Never `Read` a raw `.f06`, `.bdf`, `.dat` or `.pch` into the conversation.
+   Run `tools/run_digest.py` and query the result.
 
 ## Answer shape
 
 1. **What the message says** — quoted, with its severity and module.
 2. **What that means** — the published `User information` / `User action`.
-3. **What to check in this model** — marked as engineering reasoning, ordered
+3. **What the deck shows**: the relevant computed findings, cited by code.
+4. **What to check in this model**, marked as engineering reasoning and ordered
    most-likely first.
-4. **What to look for elsewhere in the `.f06`** — preceding warnings, the
-   epsilon/MAXRATIO lines, the mass and applied-load summaries.
+5. **What to look for elsewhere in the `.f06`**: preceding warnings, the
+   epsilon/MAXRATIO lines, the mass and applied-load summaries. The digest has
+   them already.
+6. **How to fix it**, via the finding's route to `nastran-reference` and
+   `apex-docs`.
 
 The user is an experienced FEA engineer. Give the diagnosis and the next check,
 not a tutorial on finite elements.
