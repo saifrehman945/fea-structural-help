@@ -11,13 +11,19 @@ What *is* documented is each message's own text and `User action`, which
 
 ## Order of work
 
+0. **Digest the run** with `tools/run_digest.py` (see
+   [run-digest.md](run-digest.md)). Everything below is already extracted
+   there. Use `tools/nastran_query.py` for detail, never the raw file.
 1. **Find the first `*** USER FATAL` or `*** SYSTEM FATAL`, not the last.**
    A fatal often reports the consequence of something a warning flagged earlier.
 2. **Read that message properly** — `python tools/fetch_message.py <number>` —
    including its module, which disambiguates reused numbers.
 3. **Read the warnings above it.** Singularity, constraint and geometry warnings
    usually precede the fatal that stops the run.
-4. **Only then form a hypothesis about the model**, and label it as such.
+4. **Read the deck findings**, including on runs that exited cleanly. Many
+   wrong answers (a floating mass, a load path only through glue, point loads
+   standing in for inertia) never produce a message.
+5. **Only then form a hypothesis about the model**, and label it as such.
 
 ## Severity codes
 
@@ -43,15 +49,18 @@ diagnosis.
 |---|---|
 | Run stops immediately, no results | first fatal; deck syntax; missing referenced ID |
 | "Not a valid entry" style fatals | the entry in `nastran-reference` — field position matters |
-| Singular matrix / constraint fatals | grounding, AUTOSPC report, unconnected parts, coincident-but-unmerged nodes |
+| Singular matrix / constraint fatals | grounding, AUTOSPC report; digest `UNCONSTRAINED_GROUP`, `COINCIDENT_UNMERGED`, parts table |
+| High MAXRATIO / condition number | digest `GLUE_COARSE_SECONDARY`, `MIXED_UNITS`, stiffness jumps between parts; `grid` dossier on the DOFs named |
 | Free-free or rigid-body behaviour | expected in an unconstrained modal run; a defect in a static one |
-| Results exist but look wrong | applied load resultant vs reaction resultant; units; property assignment |
-| Wildly high displacement | a part connected only through a weak or missing link |
+| Results exist but look wrong | applied load resultant vs reaction resultant; units; property assignment; digest `POINT_LOAD_ONLY`, `FLOATING_MASS`, mass estimate |
+| Wildly high displacement | a part connected only through a weak or missing link: digest `GLUE_DEPENDENT_LOAD_PATH`, parts and contact tables |
 | Contact or nonlinear run will not converge | increments, contact definitions, initial penetration or gap |
 
 ## Things worth checking in any `.f06`
 
-Engineering method. These are the standard health indicators of a static run:
+Engineering method. These are the standard health indicators of a static run.
+The digest's *Solution health* section extracts each one, or says it is not in
+the f06:
 
 - the **applied load resultant** against the **reaction resultant** — they should
   balance; a difference means load is going somewhere unintended

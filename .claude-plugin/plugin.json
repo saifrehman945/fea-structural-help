@@ -1,7 +1,7 @@
 {
   "name": "fea-structural-help",
   "description": "Structural FEA help for MSC Apex and MSC Nastran: GUI procedures, Apex Python scripting, Nastran deck keywords, solver message diagnostics, and modelling strategy. Answers are grounded in the published documentation with citations, and engineering reasoning is marked as such.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": {
     "name": "Saif ur Rehman"
   }
